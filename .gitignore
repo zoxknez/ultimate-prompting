@@ -1,0 +1,40 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local agent / session junk
+.grok/
+.cursor/
+.claude/
+*.log
+
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+*credentials*
+*secret*
+
+# Dependencies / build (if any tooling is added later)
+node_modules/
+vendor/
+target/
+dist/
+build/
+__pycache__/
+*.pyc
+.venv/
+venv/
