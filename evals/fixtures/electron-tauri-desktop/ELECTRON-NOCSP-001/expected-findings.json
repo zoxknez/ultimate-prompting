@@ -1,0 +1,22 @@
+{
+  "fixture_id": "ELECTRON-NOCSP-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved missing-CSP golden finding for electron-tauri-desktop: no Content-Security-Policy is defined anywhere in the renderer, leaving no policy containment if any injection point is ever introduced."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "ELECTRON-NOCSP-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["index.html"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": ["dashboard.js"]
+}

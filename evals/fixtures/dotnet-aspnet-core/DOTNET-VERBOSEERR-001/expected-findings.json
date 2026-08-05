@@ -1,0 +1,22 @@
+{
+  "fixture_id": "DOTNET-VERBOSEERR-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved verbose-error-disclosure golden finding for dotnet-aspnet-core: UseDeveloperExceptionPage() is registered unconditionally, not gated behind IsDevelopment(), so production renders full stack traces to clients."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "DOTNET-VERBOSEERR-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["Program.cs"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

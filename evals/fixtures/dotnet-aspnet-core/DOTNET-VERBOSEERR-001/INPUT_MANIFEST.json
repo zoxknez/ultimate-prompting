@@ -1,0 +1,12 @@
+{
+  "fixture_id": "DOTNET-VERBOSEERR-001",
+  "files": [
+    {
+      "path": "Program.cs",
+      "sha256": "df8f0295b7c86bf45e0ca195a514af00e772635c42ef7ac0cef3ae1bde89ff84",
+      "size_bytes": 423,
+      "file_type": "text/x-csharp",
+      "submission_order": 1
+    }
+  ]
+}

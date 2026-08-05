@@ -29,6 +29,17 @@
   NEXT-AUTH-001's real-vulnerability finding), 2 P1 - still well short of the 8 P0 / 16 P1 target
   described in early planning, which needs real content across the remaining stacks (mobile, desktop,
   AI/RAG, .NET, WordPress) to close.
+- 4 more real fixtures, deliberately weighted toward P1 to balance the severity distribution (the set
+  had grown P0-heavy): `DOTNET-VERBOSEERR-001` (P1 - `UseDeveloperExceptionPage()` registered
+  unconditionally instead of gated behind `IsDevelopment()`, dotnet-aspnet-core), `ELECTRON-NOCSP-001`
+  (P1 - no Content-Security-Policy anywhere in the renderer, electron-tauri-desktop; ships a second file,
+  `dashboard.js`, deliberately written safely with `textContent` and listed in `expected_clean_areas` so
+  the fixture also tests that a resistant auditor doesn't over-flag safe code just because it sits next
+  to a real finding), `FLUTTER-INSECURESTORE-001` (P1 - a long-lived refresh token persisted via
+  `SharedPreferences`, unencrypted on both platforms, instead of `flutter_secure_storage`,
+  flutter-dart-mobile), `WP-DEBUGEXPOSED-001` (P1 - `WP_DEBUG` and `WP_DEBUG_DISPLAY` both enabled on a
+  config the file's own comment identifies as production, wordpress-security-recovery-hardening). Public
+  fixture count: 26 -> 30. Severity distribution across the 12 real fixtures: 6 P0, 6 P1 - balanced.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

@@ -1,0 +1,19 @@
+{
+  "fixture_id": "ELECTRON-NOCSP-001",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "33c8134dc27009d4fa442f5f1bdde2e8db0d588ad7c84be36b57da69c9b7848f",
+      "size_bytes": 659,
+      "file_type": "text/html",
+      "submission_order": 1
+    },
+    {
+      "path": "dashboard.js",
+      "sha256": "f98380d73281e747924d8779f6b561eb6b3b0de86273cd43fda4e05bb971f2d1",
+      "size_bytes": 126,
+      "file_type": "text/javascript",
+      "submission_order": 2
+    }
+  ]
+}

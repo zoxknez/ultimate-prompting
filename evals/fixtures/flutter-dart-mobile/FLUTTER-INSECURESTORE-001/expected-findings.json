@@ -1,0 +1,22 @@
+{
+  "fixture_id": "FLUTTER-INSECURESTORE-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved insecure-storage golden finding for flutter-dart-mobile: a long-lived refresh token is persisted via SharedPreferences (unencrypted on both platforms) instead of flutter_secure_storage."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "FLUTTER-INSECURESTORE-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["lib/auth_storage.dart"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

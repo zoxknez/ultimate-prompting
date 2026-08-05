@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Example App</title>
+  <!--
+  Vulnerable: no Content-Security-Policy meta tag and no CSP header is set
+  anywhere in this app. Electron's own security guidance treats this as a
+  required baseline control, not an optional hardening extra: without it,
+  any future or overlooked injection point in this renderer (a dependency
+  bug, a missed encoding step) runs with unrestricted access to inline
+  scripts, eval, and arbitrary remote script sources instead of being
+  contained by policy.
+  -->
+</head>
+<body>
+  <div id="dashboard"></div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

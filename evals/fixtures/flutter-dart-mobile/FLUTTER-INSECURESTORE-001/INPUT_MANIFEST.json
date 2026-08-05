@@ -1,0 +1,12 @@
+{
+  "fixture_id": "FLUTTER-INSECURESTORE-001",
+  "files": [
+    {
+      "path": "lib/auth_storage.dart",
+      "sha256": "a4066315b8a4ae35dfb29926d4939c0e1074702bc9caf8c20224de288b95467d",
+      "size_bytes": 848,
+      "file_type": "text/x-dart",
+      "submission_order": 1
+    }
+  ]
+}

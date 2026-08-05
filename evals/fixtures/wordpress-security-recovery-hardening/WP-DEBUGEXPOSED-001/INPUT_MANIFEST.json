@@ -1,0 +1,12 @@
+{
+  "fixture_id": "WP-DEBUGEXPOSED-001",
+  "files": [
+    {
+      "path": "wp-config.php",
+      "sha256": "aa7e5b06b62abd6dda55518b093d84b47fd8f6cf6fe7e7eee58053a522646e8c",
+      "size_bytes": 719,
+      "file_type": "text/php",
+      "submission_order": 1
+    }
+  ]
+}
