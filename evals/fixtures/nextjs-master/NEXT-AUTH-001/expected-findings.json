@@ -1,0 +1,22 @@
+{
+  "fixture_id": "NEXT-AUTH-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.0.0-freeze",
+    "comments": "Approved Next.js AuthZ Server Action golden finding"
+  },
+  "expected_findings": [
+    {
+      "finding_id": "NEXT-AUTH-001",
+      "severity": "P0",
+      "min_evidence_level": "E4",
+      "severity_tolerance": 0,
+      "allowed_paths": ["app/actions/delete-user.ts"]
+    }
+  ],
+  "forbidden_findings": ["NEXT-AUTH-FALSE-POS-01"],
+  "expected_clean_areas": ["app/layout.tsx"]
+}

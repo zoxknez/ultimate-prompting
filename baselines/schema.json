@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BaselineManifestSchema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "stack_id",
+    "baseline_id",
+    "verified_at",
+    "effective_at",
+    "status",
+    "components",
+    "source_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "stack_id": {
+      "type": "string"
+    },
+    "baseline_id": {
+      "type": "string"
+    },
+    "verified_at": {
+      "type": "string"
+    },
+    "effective_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["verified", "pending_review", "deprecated"]
+    },
+    "components": {
+      "type": "object"
+    },
+    "support_windows": {
+      "type": "array"
+    },
+    "compatibility_constraints": {
+      "type": "array"
+    },
+    "deadlines": {
+      "type": "array"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

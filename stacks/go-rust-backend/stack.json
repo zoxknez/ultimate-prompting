@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "go-rust-backend",
+  "prompt_slug": "go-rust-backend-audit-prompt",
+  "name": "go-rust-backend Production Audit",
+  "active_baseline": "baselines/history/go-rust-backend/2026-08-05.json",
+  "components": {
+    "en": [
+      "core/en/audit-operating-contract.md",
+      "core/en/severity-model.md",
+      "core/en/final-report-schema.md",
+      "core/en/production-readiness-dod.md",
+      "stacks/go-rust-backend/overlay.en.md"
+    ],
+    "sr": [
+      "core/sr/audit-operating-contract.md",
+      "core/sr/severity-model.md",
+      "core/sr/final-report-schema.md",
+      "core/sr/production-readiness-dod.md",
+      "stacks/go-rust-backend/overlay.sr.md"
+    ]
+  }
+}

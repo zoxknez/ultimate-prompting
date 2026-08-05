@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FixtureMetadataSchema",
+  "type": "object",
+  "required": [
+    "fixture_id",
+    "stack_id",
+    "synthetic",
+    "license",
+    "contains_real_credentials",
+    "contains_production_data",
+    "source_provenance",
+    "allowed_execution",
+    "safe_fix_mode"
+  ],
+  "properties": {
+    "fixture_id": { "type": "string" },
+    "stack_id": { "type": "string" },
+    "synthetic": { "type": "boolean" },
+    "license": { "type": "string" },
+    "contains_real_credentials": { "type": "boolean" },
+    "contains_production_data": { "type": "boolean" },
+    "source_provenance": { "type": "string" },
+    "allowed_execution": { "type": "boolean" },
+    "safe_fix_mode": {
+      "type": "string",
+      "enum": ["executable", "advisory", "manual-procedure", "not-applicable"]
+    },
+    "safe_fix_required": { "type": "boolean" }
+  }
+}

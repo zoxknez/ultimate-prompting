@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoldenExpectationsSchema",
+  "type": "object",
+  "required": [
+    "fixture_id",
+    "status",
+    "dual_approval",
+    "expected_findings"
+  ],
+  "properties": {
+    "fixture_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "reviewed", "approved", "deprecated"]
+    },
+    "dual_approval": {
+      "type": "object",
+      "required": ["author", "reviewer", "approved_at"],
+      "properties": {
+        "author": { "type": "string" },
+        "reviewer": { "type": "string" },
+        "approved_at": { "type": "string" },
+        "commit_revision": { "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "expected_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["finding_id", "severity", "min_evidence_level"],
+        "properties": {
+          "finding_id": { "type": "string" },
+          "severity": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] },
+          "min_evidence_level": { "type": "string" },
+          "severity_tolerance": { "type": "integer", "default": 0 },
+          "allowed_paths": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "forbidden_findings": { "type": "array" },
+    "expected_clean_areas": { "type": "array" }
+  }
+}

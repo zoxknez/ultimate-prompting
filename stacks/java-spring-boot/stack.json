@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "java-spring-boot",
+  "prompt_slug": "java-spring-boot-audit-prompt",
+  "name": "java-spring-boot Production Audit",
+  "active_baseline": "baselines/history/java-spring-boot/2026-08-05.json",
+  "components": {
+    "en": [
+      "core/en/audit-operating-contract.md",
+      "core/en/severity-model.md",
+      "core/en/final-report-schema.md",
+      "core/en/production-readiness-dod.md",
+      "stacks/java-spring-boot/overlay.en.md"
+    ],
+    "sr": [
+      "core/sr/audit-operating-contract.md",
+      "core/sr/severity-model.md",
+      "core/sr/final-report-schema.md",
+      "core/sr/production-readiness-dod.md",
+      "stacks/java-spring-boot/overlay.sr.md"
+    ]
+  }
+}

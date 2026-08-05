@@ -1,0 +1,12 @@
+{
+  "fixture_id": "JAVA-SPRING-BOOT-FIX-001",
+  "stack_id": "java-spring-boot",
+  "synthetic": true,
+  "license": "MIT",
+  "contains_real_credentials": false,
+  "contains_production_data": false,
+  "source_provenance": "authored-for-evaluation",
+  "allowed_execution": true,
+  "safe_fix_mode": "executable",
+  "safe_fix_required": true
+}

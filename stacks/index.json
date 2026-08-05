@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-05",
+  "stacks": [
+    {
+      "stack_id": "ai-rag-llm-agent",
+      "prompt_slug": "ai-rag-llm-agent-audit-prompt",
+      "components": ["ai-rag-llm-agent"],
+      "baseline_id": "ai-rag-llm-agent",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "android-master",
+      "prompt_slug": "android-master-audit-prompt",
+      "components": ["android-master"],
+      "baseline_id": "android-master",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "devops-docker-kubernetes",
+      "prompt_slug": "devops-docker-kubernetes-audit-prompt",
+      "components": ["devops-docker-kubernetes"],
+      "baseline_id": "devops-docker-kubernetes",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "dotnet-aspnet-core",
+      "prompt_slug": "dotnet-aspnet-core-audit-prompt",
+      "components": ["dotnet-aspnet-core"],
+      "baseline_id": "dotnet-aspnet-core",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "electron-tauri-desktop",
+      "prompt_slug": "electron-tauri-desktop-audit-prompt",
+      "components": ["electron-tauri-desktop"],
+      "baseline_id": "electron-tauri-desktop",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "flutter-dart-mobile",
+      "prompt_slug": "flutter-dart-mobile-audit-prompt",
+      "components": ["flutter-dart-mobile"],
+      "baseline_id": "flutter-dart-mobile",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "go-rust-backend",
+      "prompt_slug": "go-rust-backend-audit-prompt",
+      "components": ["shared-backend", "go", "rust"],
+      "baseline_id": "go-rust-backend",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "java-spring-boot",
+      "prompt_slug": "java-spring-boot-audit-prompt",
+      "components": ["java-spring-boot"],
+      "baseline_id": "java-spring-boot",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "nextjs-master",
+      "prompt_slug": "nextjs-master-audit-prompt",
+      "components": ["nextjs-master"],
+      "baseline_id": "nextjs-master",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "node-express-api",
+      "prompt_slug": "node-express-api-audit-prompt",
+      "components": ["node-express-api"],
+      "baseline_id": "node-express-api",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "php-laravel-symfony",
+      "prompt_slug": "php-laravel-symfony-audit-prompt",
+      "components": ["php-laravel-symfony"],
+      "baseline_id": "php-laravel-symfony",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "python-pyside6-desktop",
+      "prompt_slug": "python-pyside6-desktop-audit-prompt",
+      "components": ["python-pyside6-desktop"],
+      "baseline_id": "python-pyside6-desktop",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "react-native-expo-mobile",
+      "prompt_slug": "react-native-expo-mobile-audit-prompt",
+      "components": ["react-native-expo-mobile"],
+      "baseline_id": "react-native-expo-mobile",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "ruby-rails",
+      "prompt_slug": "ruby-rails-audit-prompt",
+      "components": ["ruby-rails"],
+      "baseline_id": "ruby-rails",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "sql-database",
+      "prompt_slug": "sql-database-audit-prompt",
+      "components": ["sql-database"],
+      "baseline_id": "sql-database",
+      "locales": ["en", "sr"],
+      "active": true
+    },
+    {
+      "stack_id": "wordpress-security-recovery-hardening",
+      "prompt_slug": "wordpress-security-recovery-hardening-prompt",
+      "components": ["wordpress-security-recovery-hardening"],
+      "baseline_id": "wordpress-security-recovery-hardening",
+      "locales": ["en", "sr"],
+      "active": true
+    }
+  ]
+}

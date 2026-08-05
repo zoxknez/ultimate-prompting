@@ -1,0 +1,332 @@
+{
+  "library": "Ultimate Production Audit Prompt Library",
+  "library_version": "2.0.0",
+  "baseline_date": "2026-08-05",
+  "active_pairs": 16,
+  "active_prompt_files": 32,
+  "total_prompt_lines": 31606,
+  "packages": [
+    {
+      "id": "ai-rag-llm-agent-audit-prompt",
+      "english": {
+        "file": "ai-rag-llm-agent-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 668,
+        "headings": 51,
+        "sha256": "d392d2811d3a97e22c38fde7cde1a3082e20abdbf89ca6627ee4fe2e67288d21"
+      },
+      "serbian": {
+        "file": "ai-rag-llm-agent-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 668,
+        "headings": 51,
+        "sha256": "886b36a37d78875a001cbf50a3c855a674a65f90e1d58ec39f64dbf1326b2082"
+      }
+    },
+    {
+      "id": "android-master-audit-prompt",
+      "english": {
+        "file": "android-master-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 913,
+        "headings": 72,
+        "sha256": "13ecd62388cfb0c2cde6e4f1dbe120ebb0c872275d8688d34a3e302aa3807e6d"
+      },
+      "serbian": {
+        "file": "android-master-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 913,
+        "headings": 72,
+        "sha256": "f9a869cf7b026c956ec9dff8101c37bdd1f0ce88fc4e7920eb1577d1b263bf9e"
+      }
+    },
+    {
+      "id": "devops-docker-kubernetes-audit-prompt",
+      "english": {
+        "file": "devops-docker-kubernetes-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 1057,
+        "headings": 139,
+        "sha256": "c7c2356a5e2e6771c296a3aad4945c06fcaaad9d9bc11d1f833cd6bcfbcd0d7f"
+      },
+      "serbian": {
+        "file": "devops-docker-kubernetes-audit-prompt.sr.md",
+        "language": "sr-Latn",
+        "version": "2.0.0",
+        "lines": 1057,
+        "headings": 139,
+        "sha256": "3a4f45f6acfd48763b6a8f748c64ff426fe4d22c6563ded5ef171c7476adc52b"
+      }
+    },
+    {
+      "id": "dotnet-aspnet-core-audit-prompt",
+      "english": {
+        "file": "dotnet-aspnet-core-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 927,
+        "headings": 89,
+        "sha256": "028fd8d70136ed262e67265169bb561a0cbad22f51ff9d3b5aaaf67cefab2d96"
+      },
+      "serbian": {
+        "file": "dotnet-aspnet-core-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 927,
+        "headings": 89,
+        "sha256": "f217d38319d3dc6b39eca3beea0b6b54e3922c6a7ffe8b2c60dafe206b2716a1"
+      }
+    },
+    {
+      "id": "electron-tauri-desktop-audit-prompt",
+      "english": {
+        "file": "electron-tauri-desktop-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 1122,
+        "headings": 112,
+        "sha256": "9efe8cd54f2a3426c41ce69e4e2d326f91d4667889ccf27915627bcb4f291689"
+      },
+      "serbian": {
+        "file": "electron-tauri-desktop-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 1122,
+        "headings": 112,
+        "sha256": "1bcfc8151281f1c879c5b6c66ca5fe645dce35abb6ca5189b5f433a6b01bf710"
+      }
+    },
+    {
+      "id": "flutter-dart-mobile-audit-prompt",
+      "english": {
+        "file": "flutter-dart-mobile-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 990,
+        "headings": 86,
+        "sha256": "fdf9551e3f7f4835f57cbbaf0e766b93ec1267f1a8f63fd3a343d2bf012b9120"
+      },
+      "serbian": {
+        "file": "flutter-dart-mobile-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 990,
+        "headings": 86,
+        "sha256": "d48f3c997fd3fd56f6b7a060a6d456bae16f8b2f0061c06346c87332e6b86bf0"
+      }
+    },
+    {
+      "id": "go-rust-backend-audit-prompt",
+      "english": {
+        "file": "go-rust-backend-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 910,
+        "headings": 97,
+        "sha256": "3c16263bbfc5893c44f606a011e2e7d43b20d57ccff61128cf4e0a060fed260f"
+      },
+      "serbian": {
+        "file": "go-rust-backend-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 910,
+        "headings": 97,
+        "sha256": "ad90729cac5c36c76934e84ad2b01f3fa7af86f27325ceb8d9f01947dd109e9d"
+      }
+    },
+    {
+      "id": "java-spring-boot-audit-prompt",
+      "english": {
+        "file": "java-spring-boot-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 905,
+        "headings": 112,
+        "sha256": "e69fb89df8970a02fa4a32a3775abe82aad3dcd4892f4f9e38e1fa43695ed7cd"
+      },
+      "serbian": {
+        "file": "java-spring-boot-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 905,
+        "headings": 112,
+        "sha256": "cad512e408eca3334971a497821be91bacb6fea84d5dde218cd05fb6987cacc3"
+      }
+    },
+    {
+      "id": "nextjs-master-audit-prompt",
+      "english": {
+        "file": "nextjs-master-audit-prompt.en.md",
+        "language": [
+          "en",
+          "sr-Latn"
+        ],
+        "version": "2.0.0",
+        "lines": 985,
+        "headings": 131,
+        "sha256": "02fc8dc2678558616b0e582f8a14b62b4532039bf8226de79666bb769d88244c"
+      },
+      "serbian": {
+        "file": "nextjs-master-audit-prompt.sr.md",
+        "language": [
+          "en",
+          "sr-Latn"
+        ],
+        "version": "2.0.0",
+        "lines": 985,
+        "headings": 131,
+        "sha256": "92dcd485a0679da6988eac61087cc6364710f4eaa7a6bc81c260401ae9c2ffbf"
+      }
+    },
+    {
+      "id": "node-express-api-audit-prompt",
+      "english": {
+        "file": "node-express-api-audit-prompt.en.md",
+        "language": [
+          "en",
+          "sr-Latn"
+        ],
+        "version": "2.0.0",
+        "lines": 1052,
+        "headings": 152,
+        "sha256": "1fda16fdccd2f0c56e7658f0afb09ebb479349899b54219550dcb54d8042cf42"
+      },
+      "serbian": {
+        "file": "node-express-api-audit-prompt.sr.md",
+        "language": [
+          "en",
+          "sr-Latn"
+        ],
+        "version": "2.0.0",
+        "lines": 1052,
+        "headings": 152,
+        "sha256": "117d980cf01996f78a0527cae900f2812bf0dfcae100daf99a7b7e36d35b08ea"
+      }
+    },
+    {
+      "id": "php-laravel-symfony-audit-prompt",
+      "english": {
+        "file": "php-laravel-symfony-audit-prompt.en.md",
+        "language": [
+          "en",
+          "sr-Latn"
+        ],
+        "version": "2.0.0",
+        "lines": 1070,
+        "headings": 176,
+        "sha256": "b2d8628d0948106f613977af9a3d8e666473e6a17c62d9ff71369c62bf7cfc62"
+      },
+      "serbian": {
+        "file": "php-laravel-symfony-audit-prompt.sr.md",
+        "language": [
+          "en",
+          "sr-Latn"
+        ],
+        "version": "2.0.0",
+        "lines": 1070,
+        "headings": 176,
+        "sha256": "2cafd973d18ea11ab93c844e42861f94231d72090d24df4d04f007ea1bc47fd0"
+      }
+    },
+    {
+      "id": "python-pyside6-desktop-audit-prompt",
+      "english": {
+        "file": "python-pyside6-desktop-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 1051,
+        "headings": 151,
+        "sha256": "9aa0a8b40755679cf7a4290a3eb2e9791197139a0d934ad5f848f31771554391"
+      },
+      "serbian": {
+        "file": "python-pyside6-desktop-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 1051,
+        "headings": 151,
+        "sha256": "e70eb536d6c4ca46bbdba6cb2025c0ea8fe25d09353cda46e9087fe7e3aeadbd"
+      }
+    },
+    {
+      "id": "react-native-expo-mobile-audit-prompt",
+      "english": {
+        "file": "react-native-expo-mobile-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 879,
+        "headings": 124,
+        "sha256": "81a5c6bbbd2784516fbb8f09253d132706ae294edac6fa79e3a47a1b15812ed9"
+      },
+      "serbian": {
+        "file": "react-native-expo-mobile-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 879,
+        "headings": 124,
+        "sha256": "39ac441577fbeeb9116cf35cf2f0c8021cde6dbf2929cd82ac19db85b42fca48"
+      }
+    },
+    {
+      "id": "ruby-rails-audit-prompt",
+      "english": {
+        "file": "ruby-rails-audit-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 863,
+        "headings": 96,
+        "sha256": "f715a156e1b05bcff1680bc15a13412411e1aca98975ea5edd415019d2a4e2e0"
+      },
+      "serbian": {
+        "file": "ruby-rails-audit-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 863,
+        "headings": 96,
+        "sha256": "cd0ca2c1b6c9ea4c81a405e7c8fecb9bddf83cc672f725729aafec10be832489"
+      }
+    },
+    {
+      "id": "sql-database-audit-prompt",
+      "english": {
+        "file": "sql-database-audit-prompt.en.md",
+        "language": "EN",
+        "version": "2.0.0",
+        "lines": 803,
+        "headings": 74,
+        "sha256": "68990efff393e9a7489366ce8848a43fb2b5d1320eb18559de6cdb965df96c65"
+      },
+      "serbian": {
+        "file": "sql-database-audit-prompt.sr.md",
+        "language": "SR",
+        "version": "2.0.0",
+        "lines": 803,
+        "headings": 74,
+        "sha256": "792384759c742f9963b82201fa80bae8f07f256994655d2857c62f42fdf87a79"
+      }
+    },
+    {
+      "id": "wordpress-security-recovery-hardening-prompt",
+      "english": {
+        "file": "wordpress-security-recovery-hardening-prompt.en.md",
+        "language": "en",
+        "version": "2.0.0",
+        "lines": 1608,
+        "headings": 143,
+        "sha256": "bc69345f632a55aa6d16ce4421c65667861709e34d418910c3c1009dd0599478"
+      },
+      "serbian": {
+        "file": "wordpress-security-recovery-hardening-prompt.sr.md",
+        "language": "sr",
+        "version": "2.0.0",
+        "lines": 1608,
+        "headings": 143,
+        "sha256": "67c2312d95888f792e3b5ddb72ca8ac44c35cb340c322faba5c75c3d0c936d61"
+      }
+    }
+  ]
+}

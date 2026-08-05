@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "android-master",
+  "prompt_slug": "android-master-audit-prompt",
+  "name": "android-master Production Audit",
+  "active_baseline": "baselines/history/android-master/2026-08-05.json",
+  "components": {
+    "en": [
+      "core/en/audit-operating-contract.md",
+      "core/en/severity-model.md",
+      "core/en/final-report-schema.md",
+      "core/en/production-readiness-dod.md",
+      "stacks/android-master/overlay.en.md"
+    ],
+    "sr": [
+      "core/sr/audit-operating-contract.md",
+      "core/sr/severity-model.md",
+      "core/sr/final-report-schema.md",
+      "core/sr/production-readiness-dod.md",
+      "stacks/android-master/overlay.sr.md"
+    ]
+  }
+}

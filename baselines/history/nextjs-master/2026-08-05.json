@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "nextjs-master",
+  "baseline_id": "nextjs-master-2026-08-05",
+  "verified_at": "2026-08-05",
+  "effective_at": "2026-08-05",
+  "status": "verified",
+  "components": {
+    "nextjs": {
+      "stable_line": "16.3.x",
+      "lts_line": "16.2.11 Active LTS",
+      "maintenance_lts": "15.5.21"
+    },
+    "react": {
+      "stable_line": "19.2.x",
+      "compiler": "1.0 stable optional"
+    },
+    "typescript": {
+      "stable_line": "7.0",
+      "transition_line": "6.0"
+    },
+    "nodejs": {
+      "lts_lines": ["24 LTS", "22 LTS"],
+      "current_line": "26 Current"
+    }
+  },
+  "source_refs": [
+    "NEXTJS-RELEASES-OFFICIAL",
+    "NODEJS-RELEASES-OFFICIAL"
+  ]
+}

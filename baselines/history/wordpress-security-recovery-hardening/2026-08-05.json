@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "wordpress-security-recovery-hardening",
+  "baseline_id": "wordpress-security-2026-08-05",
+  "verified_at": "2026-08-05",
+  "effective_at": "2026-08-05",
+  "status": "verified",
+  "components": {
+    "wordpress": {
+      "stable_line": "7.0.2",
+      "upcoming": "7.1"
+    },
+    "requirements": {
+      "php": "8.3+",
+      "database": "MariaDB 10.11+ or MySQL 8.0+"
+    }
+  },
+  "source_refs": [
+    "WORDPRESS-RELEASES-OFFICIAL"
+  ]
+}

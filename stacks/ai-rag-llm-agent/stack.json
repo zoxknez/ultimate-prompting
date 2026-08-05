@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "ai-rag-llm-agent",
+  "prompt_slug": "ai-rag-llm-agent-audit-prompt",
+  "name": "ai-rag-llm-agent Production Audit",
+  "active_baseline": "baselines/history/ai-rag-llm-agent/2026-08-05.json",
+  "components": {
+    "en": [
+      "core/en/audit-operating-contract.md",
+      "core/en/severity-model.md",
+      "core/en/final-report-schema.md",
+      "core/en/production-readiness-dod.md",
+      "stacks/ai-rag-llm-agent/overlay.en.md"
+    ],
+    "sr": [
+      "core/sr/audit-operating-contract.md",
+      "core/sr/severity-model.md",
+      "core/sr/final-report-schema.md",
+      "core/sr/production-readiness-dod.md",
+      "stacks/ai-rag-llm-agent/overlay.sr.md"
+    ]
+  }
+}

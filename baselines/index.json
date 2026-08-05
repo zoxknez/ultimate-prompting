@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-05",
+  "baselines": [
+    {
+      "stack_id": "ai-rag-llm-agent",
+      "active_baseline": "baselines/history/ai-rag-llm-agent/2026-08-05.json"
+    },
+    {
+      "stack_id": "android-master",
+      "active_baseline": "baselines/history/android-master/2026-08-05.json"
+    },
+    {
+      "stack_id": "devops-docker-kubernetes",
+      "active_baseline": "baselines/history/devops-docker-kubernetes/2026-08-05.json"
+    },
+    {
+      "stack_id": "dotnet-aspnet-core",
+      "active_baseline": "baselines/history/dotnet-aspnet-core/2026-08-05.json"
+    },
+    {
+      "stack_id": "electron-tauri-desktop",
+      "active_baseline": "baselines/history/electron-tauri-desktop/2026-08-05.json"
+    },
+    {
+      "stack_id": "flutter-dart-mobile",
+      "active_baseline": "baselines/history/flutter-dart-mobile/2026-08-05.json"
+    },
+    {
+      "stack_id": "go-rust-backend",
+      "active_baseline": "baselines/history/go-rust-backend/2026-08-05.json"
+    },
+    {
+      "stack_id": "java-spring-boot",
+      "active_baseline": "baselines/history/java-spring-boot/2026-08-05.json"
+    },
+    {
+      "stack_id": "nextjs-master",
+      "active_baseline": "baselines/history/nextjs-master/2026-08-05.json"
+    },
+    {
+      "stack_id": "node-express-api",
+      "active_baseline": "baselines/history/node-express-api/2026-08-05.json"
+    },
+    {
+      "stack_id": "php-laravel-symfony",
+      "active_baseline": "baselines/history/php-laravel-symfony/2026-08-05.json"
+    },
+    {
+      "stack_id": "python-pyside6-desktop",
+      "active_baseline": "baselines/history/python-pyside6-desktop/2026-08-05.json"
+    },
+    {
+      "stack_id": "react-native-expo-mobile",
+      "active_baseline": "baselines/history/react-native-expo-mobile/2026-08-05.json"
+    },
+    {
+      "stack_id": "ruby-rails",
+      "active_baseline": "baselines/history/ruby-rails/2026-08-05.json"
+    },
+    {
+      "stack_id": "sql-database",
+      "active_baseline": "baselines/history/sql-database/2026-08-05.json"
+    },
+    {
+      "stack_id": "wordpress-security-recovery-hardening",
+      "active_baseline": "baselines/history/wordpress-security-recovery-hardening/2026-08-05.json"
+    }
+  ]
+}

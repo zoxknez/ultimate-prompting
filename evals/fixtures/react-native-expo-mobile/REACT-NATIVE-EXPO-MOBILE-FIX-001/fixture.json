@@ -1,0 +1,12 @@
+{
+  "fixture_id": "REACT-NATIVE-EXPO-MOBILE-FIX-001",
+  "stack_id": "react-native-expo-mobile",
+  "synthetic": true,
+  "license": "MIT",
+  "contains_real_credentials": false,
+  "contains_production_data": false,
+  "source_provenance": "authored-for-evaluation",
+  "allowed_execution": true,
+  "safe_fix_mode": "executable",
+  "safe_fix_required": true
+}

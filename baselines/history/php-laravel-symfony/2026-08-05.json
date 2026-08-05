@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "stack_id": "php-laravel-symfony",
+  "baseline_id": "php-laravel-symfony-2026-08-05",
+  "verified_at": "2026-08-05",
+  "effective_at": "2026-08-05",
+  "status": "verified",
+  "components": {},
+  "source_refs": []
+}

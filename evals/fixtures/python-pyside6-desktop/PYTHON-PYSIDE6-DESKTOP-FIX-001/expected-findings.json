@@ -1,0 +1,28 @@
+{
+  "fixture_id": "PYTHON-PYSIDE6-DESKTOP-FIX-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0-candidate",
+    "comments": "Approved golden finding package for python-pyside6-desktop"
+  },
+  "expected_findings": [
+    {
+      "finding_id": "PYTHON-PYSIDE6-DESKTOP-FIX-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E4",
+      "severity_tolerance": 0,
+      "allowed_paths": [
+        "src/index.ts"
+      ]
+    }
+  ],
+  "forbidden_findings": [
+    "PYTHON-PYSIDE6-DESKTOP-FIX-001-FALSE-POS-01"
+  ],
+  "expected_clean_areas": [
+    "src/clean.ts"
+  ]
+}

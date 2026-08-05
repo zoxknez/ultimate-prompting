@@ -1,244 +1,99 @@
-# Ultimate Prompting
+# Ultimate Production Audit Prompt Library
 
-**Production-grade master audit prompts** for AI coding agents (Grok, Claude, Cursor, Codex, and similar).
+Bilingual English/Serbian library of evidence-first master prompts for deep technical audits, safe remediation, production readiness, incident response and recovery.
 
-Each prompt turns a general-purpose agent into a **truth-first principal engineer**: inventory first, evidence before claims, minimal safe fixes, regression tests, and an honest production-readiness verdict.
+**Library version:** 2.0.0  
+**Baseline date:** 2026-08-05  
+**Active packages:** 16  
+**Active prompt files:** 32  
+**Languages:** English and Serbian
 
-Research baseline date for version tables: **4 August 2026**.  
-Baselines are starting points — agents must re-check official sources at audit time.
+## What This Library Is
 
----
+Each prompt is a structured operating contract for an AI coding or audit agent. The prompts are designed to prevent shallow checklist reviews and require evidence across source code, dependencies, generated artifacts, runtime configuration, data, deployment, security controls, failure modes, rollback and recovery.
 
-## Why this exists
+The library is not a guarantee that a system is secure or production-ready. Results depend on scope, access, evidence quality, tool capability, environment fidelity and correct execution.
 
-Most “audit my app” prompts produce generic best-practice lists.
+## Packages
 
-These prompts require the agent to:
+| # | Package | English | Serbian |
+| --- | --- | --- | --- |
+| 1 | AI / RAG / LLM / Agents / Tools / MCP | `ai-rag-llm-agent-audit-prompt.en.md` | `ai-rag-llm-agent-audit-prompt.sr.md` |
+| 2 | Android / Kotlin / Jetpack Compose / TV | `android-master-audit-prompt.en.md` | `android-master-audit-prompt.sr.md` |
+| 3 | DevOps / Docker / Kubernetes / Cloud | `devops-docker-kubernetes-audit-prompt.en.md` | `devops-docker-kubernetes-audit-prompt.sr.md` |
+| 4 | .NET / C# / ASP.NET Core / EF Core | `dotnet-aspnet-core-audit-prompt.en.md` | `dotnet-aspnet-core-audit-prompt.sr.md` |
+| 5 | Electron / Tauri Desktop | `electron-tauri-desktop-audit-prompt.en.md` | `electron-tauri-desktop-audit-prompt.sr.md` |
+| 6 | Flutter / Dart / Mobile / Web / Desktop | `flutter-dart-mobile-audit-prompt.en.md` | `flutter-dart-mobile-audit-prompt.sr.md` |
+| 7 | Go / Rust Backend And Systems | `go-rust-backend-audit-prompt.en.md` | `go-rust-backend-audit-prompt.sr.md` |
+| 8 | Java / Spring Boot / JVM | `java-spring-boot-audit-prompt.en.md` | `java-spring-boot-audit-prompt.sr.md` |
+| 9 | Next.js / React / TypeScript | `nextjs-master-audit-prompt.en.md` | `nextjs-master-audit-prompt.sr.md` |
+| 10 | Node.js / Express / Fastify API | `node-express-api-audit-prompt.en.md` | `node-express-api-audit-prompt.sr.md` |
+| 11 | PHP / Laravel / Symfony | `php-laravel-symfony-audit-prompt.en.md` | `php-laravel-symfony-audit-prompt.sr.md` |
+| 12 | Python / PySide6 / Qt Desktop | `python-pyside6-desktop-audit-prompt.en.md` | `python-pyside6-desktop-audit-prompt.sr.md` |
+| 13 | React Native / Expo / Android / iOS | `react-native-expo-mobile-audit-prompt.en.md` | `react-native-expo-mobile-audit-prompt.sr.md` |
+| 14 | Ruby / Ruby on Rails | `ruby-rails-audit-prompt.en.md` | `ruby-rails-audit-prompt.sr.md` |
+| 15 | SQL / PostgreSQL / MySQL / MariaDB / SQLite | `sql-database-audit-prompt.en.md` | `sql-database-audit-prompt.sr.md` |
+| 16 | WordPress Security Recovery / Forensics / Hardening | `wordpress-security-recovery-hardening-prompt.en.md` | `wordpress-security-recovery-hardening-prompt.sr.md` |
 
-1. **Protect** the workspace (git, secrets, signing keys, uncommitted work)
-2. **Map** real architecture, runtimes, and deployment units
-3. **Verify** versions, lifecycle, and EOL from primary sources
-4. **Run** real install/build/test/security commands (or mark `UNVERIFIED`)
-5. **Separate** confirmed findings from suspicion
-6. **Fix** only when the work mode allows — smallest defensible change
-7. **Prove** repairs with regression tests
-8. **Document** exact commands, exits, and residual risk
-9. **Refuse** to invent command output, CVEs, or green tests
+## Recommended Use
 
-> Code that compiles is not production-ready.  
-> Passing tests are not proof of security.  
-> Local startup is not proof of deployability.
+1. Select the closest stack prompt.
+2. Provide the repository, artifacts, runtime/deployment context and business-critical flows.
+3. Include the shared files from `core/` when the target model supports multiple files.
+4. Select `AUDIT_ONLY`, safe-fix, incident-response or equivalent mode defined by the prompt.
+5. Require the agent to distinguish facts, observations, hypotheses and unknowns.
+6. Do not approve destructive changes without evidence, impact and rollback.
+7. Re-run the prescribed verification and failure scenarios after changes.
+8. Keep the final report and evidence IDs with the release or incident record.
 
----
+## Shared Contracts
 
-## Repository layout
+- `core/audit-operating-contract.md` - evidence-first operating rules
+- `core/severity-model.md` - common P0-P3 severity model
+- `core/final-report-schema.md` - final report structure
+- `core/production-readiness-dod.md` - shared production readiness Definition of Done
 
-```text
-ultimate-prompting/
-├── README.md
-├── .gitignore
-└── *-audit-prompt.{en,sr}.md    # 16 stacks × EN + SR = 32 prompts
+## Baselines
+
+The `baselines/` directory contains dated source manifests. They are snapshots, not permanent truth. Every time-sensitive version, security, support-policy or platform claim must be re-checked against its primary source during a real audit.
+
+Never invent a future patch number. Never upgrade solely because a newer major exists. Verify compatibility, support, migration, rollout and rollback.
+
+## Validation
+
+Run:
+
+```bash
+python scripts/check_parity.py
+python scripts/check_integrity.py
+python scripts/check_baselines.py
 ```
 
-| Suffix | Language |
-| ------ | -------- |
-| `.en.md` | English |
-| `.sr.md` | Serbian (ASCII-friendly technical Serbian) |
+The checks validate active EN/SR pair discovery, heading depth, line-shape parity, YAML frontmatter, version metadata, JSON source manifests, balanced fenced blocks, banned baseline hardcodes and Serbian dash-style rules.
 
-Same structure and depth in both languages (1:1 section parity).
+Structural parity does not prove perfect semantic translation. Human or model-assisted bilingual review is still required for meaning-sensitive changes.
 
----
-
-## Catalog (16 stacks)
-
-| # | Domain | Files | Focus |
-| - | ------ | ----- | ----- |
-| 1 | **AI / RAG / LLM / Agents / MCP** | `ai-rag-llm-agent-audit-prompt.*` | Retrieval ACL, tools, injection, eval, cost, kill switch |
-| 2 | **Android / Kotlin / Compose** | `android-master-audit-prompt.*` | Gradle/AGP, lifecycle, Compose, 16 KB pages, Play release |
-| 3 | **DevOps / Docker / Kubernetes** | `devops-docker-kubernetes-audit-prompt.*` | Images, RBAC, probes, supply chain, backup/restore |
-| 4 | **.NET / ASP.NET Core / EF Core** | `dotnet-aspnet-core-audit-prompt.*` | .NET 10 LTS, auth, Data Protection, EF, publish |
-| 5 | **Electron / Tauri desktop** | `electron-tauri-desktop-audit-prompt.*` | Webview isolation, IPC/capabilities, signing, updater |
-| 6 | **Flutter / Dart** | `flutter-dart-mobile-audit-prompt.*` | Channels/FFI, offline, 16 KB, stores, multi-platform |
-| 7 | **Go / Rust backends** | `go-rust-backend-audit-prompt.*` | Race/Miri, modules/crates, concurrency, supply chain |
-| 8 | **Java / Spring Boot** | `java-spring-boot-audit-prompt.*` | Boot 4.x, Security, JPA, Actuator, migrations |
-| 9 | **Next.js / React** | `nextjs-master-audit-prompt.*` | RSC, Server Actions, cache privacy, Vercel/deploy |
-| 10 | **Node.js / Express** | `node-express-api-audit-prompt.*` | Event loop, Express 5, authz, jobs, TypeScript 7 |
-| 11 | **PHP / Laravel / Symfony** | `php-laravel-symfony-audit-prompt.*` | FPM vs Octane, Composer, Eloquent/Doctrine, queues |
-| 12 | **Python / PySide6 desktop** | `python-pyside6-desktop-audit-prompt.*` | Qt threads, packaging, updater, subprocess safety |
-| 13 | **React Native / Expo** | `react-native-expo-mobile-audit-prompt.*` | New Arch, Hermes, EAS/OTA `runtimeVersion`, stores |
-| 14 | **Ruby / Rails** | `ruby-rails-audit-prompt.*` | Puma pools, Solid Queue/Sidekiq, AR, Kamal |
-| 15 | **SQL / PostgreSQL / MySQL / SQLite** | `sql-database-audit-prompt.*` | Constraints, plans, PITR, restore-tested backups |
-| 16 | **WordPress security & recovery** | `wordpress-security-recovery-hardening-prompt.*` | Forensics first, containment, rebuild, hardening |
-
----
-
-## How to use
-
-### 1. Pick the stack prompt
-
-Example: full-stack Node API → `node-express-api-audit-prompt.en.md`  
-Example: Rails monolith → `ruby-rails-audit-prompt.en.md`  
-Example: compromised WP site → `wordpress-security-recovery-hardening-prompt.en.md`
-
-### 2. Fill the context table
-
-At the top of each prompt, replace placeholders:
+## Repository Layout
 
 ```text
-[NAME], [REPO], [WORKLOAD], [DEPLOYMENT], [REŽIM_RADA], …
+.
+├── *.en.md / *.sr.md        active prompt pairs
+├── core/                    shared operating contracts
+├── baselines/               dated primary-source manifests
+├── reviews/                 Serbian revision reports
+├── scripts/                 repository validation tools
+├── stacks/                  reusable stack overlays
+└── archive/                 superseded prompt versions
 ```
 
-### 3. Set the work mode
+## Safety Notes
 
-If omitted, agents default to **`AUDIT_AND_SAFE_FIX`**.
+- Use only on systems you are authorized to inspect or change.
+- Preserve evidence before destructive incident-response actions.
+- Do not expose secrets, personal data, private keys or full database dumps in prompts or reports.
+- A green build, passing checksum, successful deployment or absence of visible symptoms is not proof of production safety.
+- Missing evidence must remain missing evidence, not be converted into a passing result.
 
-| Mode | Behavior |
-| ---- | -------- |
-| `AUDIT_ONLY` | Analyze and run safe checks; no source/lock/schema changes |
-| `AUDIT_AND_SAFE_FIX` | Confirmed low-risk fixes + regression tests; plan large changes |
-| `FULL_IMPLEMENTATION` | Justified fixes in small steps; backup before destructive work |
-| `FIX_CONFIRMED_ISSUES` | Only previously registered confirmed issues |
-| Stack-specific | e.g. `SECURITY_AUDIT`, `MIGRATION_AUDIT`, `PERFORMANCE_AUDIT`, `RELEASE_AND_OTA_AUDIT`, `INCIDENT_AND_RECOVERY` |
+## License And Contributions
 
-### 4. Paste into the agent
-
-Use as:
-
-- system / project instruction,
-- first message in a coding session,
-- or `.cursor` / agent skill body.
-
-### 5. Demand the mandatory deliverables
-
-Every prompt ends with a **final report** contract, typically:
-
-- verdict: `ready` / `ready-with-conditions` / `not-ready`
-- version / lifecycle table
-- architecture map
-- P0–P3 findings with evidence
-- command log (real exits only)
-- residual risk and blockers
-- external sources consulted (URL + date)
-
----
-
-## Anatomy of a master prompt
-
-```text
-Research baseline (dated version table)
-  → Role & mission
-  → Technology paths (framework / runtime / platform)
-  → Project context table
-  → Work modes
-  → Operating contract (truth-first)
-  → Finding register schema
-  → Phases A…R (inventory → fix → release)
-  → Severity P0–P3
-  → Production checklist
-  → Definition of Done
-  → Forbidden behaviors
-  → Final report template
-  → Work order & priorities
-```
-
-### Evidence statuses
-
-| Status | Meaning |
-| ------ | ------- |
-| `CONFIRMED` / `POTVRĐENO` | Hard evidence (code, config, command, test, runtime) |
-| `PARTIALLY_CONFIRMED` | Strong signal, missing environment/runtime piece |
-| `UNVERIFIED` / `NEPROVERENO` | Could not run or incomplete access |
-| `NOT_APPLICABLE` | Outside project scope |
-| `REJECTED` / `ODBAČENO` | Checked and not a real issue |
-
-### Severity (shared philosophy)
-
-| Priority | Typical meaning |
-| -------- | --------------- |
-| **P0** | Unauthorized access, RCE, secret exposure, data loss, unrecoverable deploy |
-| **P1** | Critical authz/race/idempotency/outage patterns, unsafe migrations |
-| **P2** | Localized defects, measured perf, weak observability |
-| **P3** | Docs, naming, hygiene |
-
----
-
-## Design principles
-
-1. **Truth-first** — no invented command output, CVEs, or test results  
-2. **Protect first** — secrets, signing keys, production DBs, user data  
-3. **Read-only first** — especially databases, migrations, destructive DDL  
-4. **Engine-specific** — PostgreSQL ≠ MySQL ≠ SQLite; Electron ≠ Tauri; FPM ≠ Octane  
-5. **Measure performance** — no “it’s slow” / “YJIT helps” without data  
-6. **Restore-tested backups** — a backup that was never restored is not proven  
-7. **Minimal diffs** — no framework rewrites for fashion  
-8. **Honest verdicts** — if DoD fails: *not fully production-ready* + blockers  
-
----
-
-## Baseline snapshot (4 August 2026)
-
-High-level pins used in prompt tables (always re-verify):
-
-| Ecosystem | Snapshot highlights |
-| --------- | ------------------- |
-| .NET | .NET **10** LTS (e.g. 10.0.10), C# 14, EF Core 10 |
-| Java | Java **25** LTS, Spring Boot **4.1.x** |
-| Go / Rust | Go **1.26.x**, Rust **1.97.x**, Edition 2024 |
-| Node / Next | Node **24** LTS, Express **5.x**, Next **16.3.x**, TS **7.x** |
-| PHP | PHP **8.4/8.5** preferred, Laravel **13**, Symfony **7.4** LTS |
-| Ruby | Ruby **4.0.x**, Rails **8.1.x**, Solid Queue default |
-| SQL | PostgreSQL **18**, MySQL **9.7/8.4** LTS, SQLite **3.53.x** |
-| Desktop | Electron **43.x**, Tauri **2.11.x** |
-| Mobile | Flutter **3.44.x**, Expo SDK **57** / RN **0.86**, New Arch only |
-| WordPress | WP **7.0.x**, PHP **8.3+** recommended |
-
----
-
-## Contributing
-
-- Keep **EN and SR pairs in sync** (same sections, same depth).  
-- Prefer **ASCII-friendly Serbian** in `.sr.md` for tooling portability.  
-- Update research baselines with **primary sources** + access date.  
-- Do not add secrets, real credentials, or production dumps.  
-- Prefer small, reviewable edits over drive-by rewrites of every prompt.
-
-Suggested commit style:
-
-```text
-docs: refresh .NET baseline for 2026-08
-feat: add Electron/Tauri master audit prompt
-fix: align Flutter EN/SR section parity
-```
-
----
-
-## License
-
-MIT — free to use, modify, and embed in internal agent workflows.
-
-If you publish derivatives, a link back to this repository is appreciated but not required.
-
----
-
-## Maintainer
-
-- GitHub: [zoxknez/ultimate-prompting](https://github.com/zoxknez/ultimate-prompting)
-
----
-
-## Quick start (agent session)
-
-```text
-You are executing the master audit prompt below.
-
-Work mode: AUDIT_AND_SAFE_FIX
-Repository: <path or URL>
-Stack prompt: node-express-api-audit-prompt.en.md
-
-Rules:
-- Never invent command output.
-- Mark unrun checks as UNVERIFIED with reason.
-- Deliver the mandatory final report and DoD checklist.
-```
-
-Then paste the full contents of the chosen `*.md` file.
+See `LICENSE`, `CONTRIBUTING.md` and `SECURITY.md`.

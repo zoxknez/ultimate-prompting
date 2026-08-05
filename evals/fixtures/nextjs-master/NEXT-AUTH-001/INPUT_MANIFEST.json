@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NEXT-AUTH-001",
+  "files": [
+    {
+      "path": "app/actions/delete-user.ts",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 420,
+      "file_type": "text/typescript",
+      "submission_order": 1
+    }
+  ]
+}
