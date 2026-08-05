@@ -6,16 +6,82 @@
   "effective_at": "2026-08-05",
   "status": "verified",
   "components": {
-    "wordpress": {
-      "stable_line": "7.0.2",
-      "upcoming": "7.1"
+    "wordpress-current": {
+      "verified_fact": "WordPress 7.0.2 is the latest release in the 7.0 series and was released on 2026-07-17.",
+      "security_context": "The release addresses one critical and one high-severity security issue, and forced auto-updates were enabled for affected sites.",
+      "primary_url": "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
     },
-    "requirements": {
-      "php": "8.3+",
-      "database": "MariaDB 10.11+ or MySQL 8.0+"
+    "wordpress-release-archive": {
+      "verified_fact": "Only the most recent release in the 7.0 series is identified as safe to use and actively maintained in the release archive.",
+      "primary_url": "https://wordpress.org/download/releases/"
+    },
+    "wordpress-upcoming": {
+      "verified_fact": "WordPress 7.1 is scheduled for 2026-08-19, but beta and release-candidate builds are not production recovery targets.",
+      "primary_url": "https://wordpress.org/news/2026/07/wordpress-7-1-beta-3/"
+    },
+    "wordpress-requirements": {
+      "verified_fact": "WordPress recommends PHP 8.3 or greater, MariaDB 10.11 or greater or MySQL 8.0 or greater, an Nginx or Apache environment with rewrite support, and HTTPS.",
+      "legacy_warning": "Compatibility minimums are not security recommendations; EOL PHP or database versions remain unacceptable long-term targets.",
+      "primary_url": "https://wordpress.org/about/requirements/"
+    },
+    "php-support": {
+      "verified_fact": "PHP 8.2, 8.3, 8.4 and 8.5 are supported on the verification date. PHP 8.2 and 8.3 receive security fixes only; PHP 8.4 and 8.5 remain in active support.",
+      "primary_url": "https://www.php.net/supported-versions.php"
+    },
+    "wordpress-security-model": {
+      "verified_fact": "Only the latest WordPress version is officially supported; the security team may backport critical fixes to older versions as a courtesy.",
+      "primary_url": "https://wordpress.org/about/security/"
+    },
+    "wordpress-hardening": {
+      "verified_fact": "Official hardening guidance covers trusted download sources, encrypted administration, permissions, wp-config protection, file editing, backups, logging and monitoring.",
+      "primary_url": "https://developer.wordpress.org/advanced-administration/security/hardening/"
+    },
+    "wordpress-hacked-faq": {
+      "verified_fact": "Official hacked-site guidance emphasizes identifying indicators of compromise, changing access credentials, comparing files with official sources and taking a pragmatic incident-response approach.",
+      "primary_url": "https://wordpress.org/documentation/article/faq-my-site-was-hacked/"
+    },
+    "wpcli-core-checksums": {
+      "verified_fact": "wp core verify-checksums compares installed core files with WordPress.org checksums and runs before WordPress loads.",
+      "limitation": "Checksum success does not examine uploads, database content, MU plugins, custom/premium code, host persistence, control planes or third-party scripts.",
+      "primary_url": "https://developer.wordpress.org/cli/commands/core/verify-checksums/"
+    },
+    "wpcli-plugin-checksums": {
+      "verified_fact": "wp plugin verify-checksums verifies WordPress.org-hosted plugin files where checksums are available.",
+      "limitation": "Premium, custom, removed or otherwise unverifiable packages require independent provenance and comparison.",
+      "primary_url": "https://developer.wordpress.org/cli/commands/plugin/verify-checksums/"
+    },
+    "wordpress-automatic-updates": {
+      "verified_fact": "WordPress can apply minor/security background updates, and the security team can trigger plugin/theme updates for critical cases; configuration may still disable those mechanisms.",
+      "primary_url": "https://developer.wordpress.org/advanced-administration/upgrade/upgrading/"
+    },
+    "wordpress-salts": {
+      "verified_fact": "Changing WordPress secret keys and salts invalidates existing authentication cookies.",
+      "primary_url": "https://developer.wordpress.org/apis/wp-config-php/"
+    },
+    "wordpress-application-passwords": {
+      "verified_fact": "Application Passwords are revocable per-application credentials for programmatic WordPress API access and must be inventoried during identity response.",
+      "primary_url": "https://developer.wordpress.org/advanced-administration/security/application-passwords/"
+    },
+    "nist-incident-response": {
+      "verified_fact": "NIST SP 800-61 Rev. 3, published in April 2025, integrates incident response recommendations into cybersecurity risk management aligned with CSF 2.0.",
+      "primary_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
     }
   },
   "source_refs": [
-    "WORDPRESS-RELEASES-OFFICIAL"
-  ]
+    "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+    "https://developer.wordpress.org/advanced-administration/security/application-passwords/",
+    "https://developer.wordpress.org/advanced-administration/security/hardening/",
+    "https://developer.wordpress.org/advanced-administration/upgrade/upgrading/",
+    "https://developer.wordpress.org/apis/wp-config-php/",
+    "https://developer.wordpress.org/cli/commands/core/verify-checksums/",
+    "https://developer.wordpress.org/cli/commands/plugin/verify-checksums/",
+    "https://wordpress.org/about/requirements/",
+    "https://wordpress.org/about/security/",
+    "https://wordpress.org/documentation/article/faq-my-site-was-hacked/",
+    "https://wordpress.org/download/releases/",
+    "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/",
+    "https://wordpress.org/news/2026/07/wordpress-7-1-beta-3/",
+    "https://www.php.net/supported-versions.php"
+  ],
+  "notes": "{\"rule\": \"Treat this file as a dated incident-response baseline. Re-check primary sources before version-specific remediation or legal conclusions.\", \"no_absolute_clean_claim\": \"Use 'No known indicators were found within the examined scope as of [timestamp]' instead of claiming that a site is absolutely clean.\", \"preferred_recovery\": \"For confirmed compromise, prefer a trusted rebuild or a verified isolated restore over an unproven in-place cleanup.\"}"
 }

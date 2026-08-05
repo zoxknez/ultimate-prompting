@@ -5,6 +5,62 @@
   "verified_at": "2026-08-05",
   "effective_at": "2026-08-05",
   "status": "verified",
-  "components": {},
-  "source_refs": []
+  "components": {
+    "postgresql": {
+      "current_stable_major": "18",
+      "current_stable_patch": "18.4",
+      "supported_majors": [
+        "18",
+        "17",
+        "16",
+        "15",
+        "14"
+      ],
+      "postgresql_14_final_release_date": "2026-11-12",
+      "preview_line": "19 beta 2",
+      "audit_note": "Verify server_version, package or image, extensions, managed-service compatibility and restore path."
+    },
+    "mysql": {
+      "lts_line": "8.4",
+      "current_verified_lts_patch": "8.4.10",
+      "innovation_line": "9.7",
+      "current_verified_innovation_patch": "9.7.2",
+      "mysql_8_0_status": "community EOL as of April 2026",
+      "release_model": "LTS and Innovation are separate production-grade tracks; 9.7 is Innovation, not LTS",
+      "audit_note": "Verify exact edition, patch, support policy, upgrade checker, connector and operating-system support."
+    },
+    "mariadb": {
+      "current_lts_line": "12.3",
+      "maintenance_until": "June 2029",
+      "audit_note": "Treat MariaDB as a distinct engine from Oracle MySQL and verify the exact patch at execution time."
+    },
+    "sqlite": {
+      "current_release": "3.53.4",
+      "release_date": "2026-07-24",
+      "audit_note": "Verify sqlite_version(), sqlite_source_id(), compile options, binding, journal mode and actual filesystem behavior from the application process."
+    },
+    "recovery": {
+      "postgresql": "base backup plus continuous WAL archive for PITR",
+      "mysql": "consistent backup plus binary logs and known coordinates or GTID for PITR",
+      "sqlite": "online Backup API, VACUUM INTO or another supported coordinated method",
+      "principle": "A backup is not valid until an isolated restore and application-level verification succeed."
+    }
+  },
+  "source_refs": [
+    "https://www.postgresql.org/support/versioning/",
+    "https://www.postgresql.org/about/news/postgresql-184-1710-1614-1518-and-1423-released-3297/",
+    "https://www.postgresql.org/docs/18/backup.html",
+    "https://www.postgresql.org/docs/18/app-pgbasebackup.html",
+    "https://dev.mysql.com/doc/refman/8.4/en/mysql-releases.html",
+    "https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-10.html",
+    "https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html",
+    "https://dev.mysql.com/doc/relnotes/mysql/8.0/en/",
+    "https://dev.mysql.com/doc/refman/8.4/en/upgrade-paths.html",
+    "https://dev.mysql.com/doc/refman/8.4/en/point-in-time-recovery.html",
+    "https://mariadb.org/mariadb-server-12-3-lts-released/",
+    "https://mariadb.com/docs/release-notes/community-server/12.3/mariadb-12.3-changes-and-improvements",
+    "https://www.sqlite.org/changes.html",
+    "https://www.sqlite.org/wal.html",
+    "https://www.sqlite.org/backup.html"
+  ]
 }

@@ -5,6 +5,62 @@
   "verified_at": "2026-08-05",
   "effective_at": "2026-08-05",
   "status": "verified",
-  "components": {},
-  "source_refs": []
+  "components": {
+    "react_native": {
+      "stable_line": "0.86.x",
+      "status": "active",
+      "next_scheduled": "0.87.x on 2026-08-10"
+    },
+    "expo_sdk": {
+      "latest": "57",
+      "react_native_line": "0.86",
+      "react_line": "19.2.x"
+    },
+    "new_architecture": {
+      "status": "mandatory on current supported lines; verify actual build and dependency support"
+    },
+    "hermes": {
+      "status": "bundled with React Native; Hermes V1 default from React Native 0.84"
+    },
+    "ota": {
+      "requirements": [
+        "runtimeVersion compatibility",
+        "native fingerprint review",
+        "code signing",
+        "channel isolation",
+        "staged rollout",
+        "rollback and crash-loop recovery"
+      ]
+    },
+    "android": {
+      "requirements": [
+        "release AAB/APK inspection",
+        "16 KB page-size validation for native libraries",
+        "physical-device testing"
+      ]
+    },
+    "apple": {
+      "requirements": [
+        "privacy manifests",
+        "required-reason API review",
+        "third-party SDK signatures and manifests",
+        "archive and physical-device testing"
+      ]
+    }
+  },
+  "source_refs": [
+    "https://reactnative.dev/releases/overview",
+    "https://reactnative.dev/versions.html",
+    "https://reactnative.dev/blog/2026/02/11/react-native-0.84",
+    "https://reactnative.dev/docs/hermes",
+    "https://docs.expo.dev/versions/latest/",
+    "https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/",
+    "https://docs.expo.dev/workflow/continuous-native-generation/",
+    "https://docs.expo.dev/config-plugins/introduction/",
+    "https://docs.expo.dev/eas-update/runtime-versions/",
+    "https://docs.expo.dev/eas-update/code-signing/",
+    "https://docs.expo.dev/versions/latest/sdk/fingerprint/",
+    "https://developer.android.com/guide/practices/page-sizes",
+    "https://developer.apple.com/documentation/bundleresources/privacy-manifest-files"
+  ]
 }
