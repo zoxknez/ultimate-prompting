@@ -1,0 +1,22 @@
+{
+  "fixture_id": "ELECTRON-IPC-PATHTRAVERSAL-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved IPC path-traversal golden finding for electron-tauri-desktop: the main-process 'read-attachment' handler joins a renderer-supplied filename onto a fixed directory with no check that the resolved path stays inside it, and the main process has full filesystem access unlike the sandboxed renderer."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "ELECTRON-IPC-PATHTRAVERSAL-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["main/ipcHandlers.js"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

@@ -76,6 +76,26 @@
   38 -> 42. Severity distribution across the 24 real fixtures: **8 P0, 16 P1** - both severity targets
   from early planning (>= 8 P0, >= 16 P1) are now met.
 
+### Changed
+
+- With both severity floors met, started retiring the original 17 tautological placeholder fixtures
+  (the ones whose `finding_id` was engineered to match `MockProvider`'s hardcoded output pattern, with no
+  real source and no real vulnerability - see the `[2.1.0]` entry below for how that was first
+  discovered) rather than leaving them inflating the fixture count with a meaningless "100%" signal.
+  Removed 4 and replaced them with real fixtures covering genuinely new vulnerability classes, not
+  duplicating what each stack already had: `AI-AGENT-UNSAFEEXEC-001` (ai-rag-llm-agent, P0 - an agent
+  tool passes the model's own generated command straight to a shell with no allowlist, turning any
+  successful prompt injection into remote code execution), `ELECTRON-IPC-PATHTRAVERSAL-001`
+  (electron-tauri-desktop, P0 - a main-process IPC handler joins a renderer-supplied filename onto a
+  fixed directory with no containment check, and the main process has full filesystem access unlike the
+  sandboxed renderer), `FLUTTER-CERTBYPASS-001` (flutter-dart-mobile, P0 - `badCertificateCallback`
+  unconditionally returns `true`, accepting any TLS certificate for any host), `PYSIDE-LOGSENSITIVE-001`
+  (python-pyside6-desktop, P1 - every outgoing HTTP request is logged verbatim including the
+  Authorization header and raw body). All 4 independently re-verified (schema validation, re-computed
+  manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture count
+  unchanged at 42 (4 fake removed, 4 real added); real (non-generated) fixture count: 24 -> 28; remaining
+  tautological placeholders: 17 -> 13.
+
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 
 No prompt content changed in this section - all 32 root `*.en.md`/`*.sr.md` files remain byte-identical to

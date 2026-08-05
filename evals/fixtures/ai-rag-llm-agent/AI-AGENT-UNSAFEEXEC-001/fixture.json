@@ -1,12 +1,12 @@
 {
-  "fixture_id": "AI-RAG-LLM-AGENT-FIX-001",
+  "fixture_id": "AI-AGENT-UNSAFEEXEC-001",
   "stack_id": "ai-rag-llm-agent",
   "synthetic": true,
   "license": "MIT",
   "contains_real_credentials": false,
   "contains_production_data": false,
   "source_provenance": "authored-for-evaluation",
-  "allowed_execution": true,
+  "allowed_execution": false,
   "safe_fix_mode": "not-applicable",
   "safe_fix_required": false
 }

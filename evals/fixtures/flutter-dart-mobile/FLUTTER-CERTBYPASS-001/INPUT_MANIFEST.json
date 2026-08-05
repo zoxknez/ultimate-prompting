@@ -1,0 +1,12 @@
+{
+  "fixture_id": "FLUTTER-CERTBYPASS-001",
+  "files": [
+    {
+      "path": "lib/api_client.dart",
+      "sha256": "3e2621f3e8b0f6005e0cf8f548ebf17a471430404d8e7579fb597b0a1dd2bb49",
+      "size_bytes": 678,
+      "file_type": "text/x-dart",
+      "submission_order": 1
+    }
+  ]
+}

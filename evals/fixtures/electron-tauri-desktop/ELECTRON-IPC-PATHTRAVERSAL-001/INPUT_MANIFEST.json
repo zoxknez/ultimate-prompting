@@ -1,0 +1,12 @@
+{
+  "fixture_id": "ELECTRON-IPC-PATHTRAVERSAL-001",
+  "files": [
+    {
+      "path": "main/ipcHandlers.js",
+      "sha256": "84843c180c7401f3e836f6fe90eba7a4fb1e9c850f67767cff6f63b0c69cfb33",
+      "size_bytes": 806,
+      "file_type": "text/javascript",
+      "submission_order": 1
+    }
+  ]
+}

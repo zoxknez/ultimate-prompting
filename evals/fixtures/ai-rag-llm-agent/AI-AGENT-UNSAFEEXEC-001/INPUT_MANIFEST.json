@@ -1,0 +1,12 @@
+{
+  "fixture_id": "AI-AGENT-UNSAFEEXEC-001",
+  "files": [
+    {
+      "path": "tools/shell_tool.py",
+      "sha256": "d8041598664405eeddd2dd8c79d4795d280686deb426302f0ed7fa76430e873a",
+      "size_bytes": 781,
+      "file_type": "text/x-python",
+      "submission_order": 1
+    }
+  ]
+}

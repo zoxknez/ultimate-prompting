@@ -1,0 +1,12 @@
+{
+  "fixture_id": "PYSIDE-LOGSENSITIVE-001",
+  "files": [
+    {
+      "path": "http_logger.py",
+      "sha256": "d07686c24d0869b9a8abe8180f94dc6ebd367da032aa27016ec2c052d323024c",
+      "size_bytes": 830,
+      "file_type": "text/x-python",
+      "submission_order": 1
+    }
+  ]
+}

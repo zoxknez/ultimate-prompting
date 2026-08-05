@@ -1,0 +1,22 @@
+{
+  "fixture_id": "PYSIDE-LOGSENSITIVE-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved sensitive-data-logging golden finding for python-pyside6-desktop: every outgoing request is logged verbatim to a plain debug.log, including the Authorization header and raw request/response bodies that can contain passwords."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "PYSIDE-LOGSENSITIVE-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["http_logger.py"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

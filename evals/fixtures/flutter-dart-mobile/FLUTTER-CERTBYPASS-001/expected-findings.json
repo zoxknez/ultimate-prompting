@@ -1,0 +1,22 @@
+{
+  "fixture_id": "FLUTTER-CERTBYPASS-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved TLS-validation-bypass golden finding for flutter-dart-mobile: badCertificateCallback unconditionally returns true, accepting any certificate for any host and defeating TLS validation for every request this client makes."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "FLUTTER-CERTBYPASS-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["lib/api_client.dart"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

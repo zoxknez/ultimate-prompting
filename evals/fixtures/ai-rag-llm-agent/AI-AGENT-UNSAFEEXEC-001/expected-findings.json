@@ -1,0 +1,22 @@
+{
+  "fixture_id": "AI-AGENT-UNSAFEEXEC-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved unsafe-tool-execution golden finding for ai-rag-llm-agent: the shell tool passes the model's own generated command string straight to a shell with no allowlist, argument validation, or sandboxing, turning any successful prompt injection into remote code execution."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "AI-AGENT-UNSAFEEXEC-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["tools/shell_tool.py"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}
