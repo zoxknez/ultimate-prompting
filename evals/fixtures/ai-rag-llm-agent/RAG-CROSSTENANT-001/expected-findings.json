@@ -1,0 +1,22 @@
+{
+  "fixture_id": "RAG-CROSSTENANT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved cross-tenant RAG leakage golden finding for ai-rag-llm-agent: similarity_search has no tenant/workspace filter, so any customer's embedded documents are eligible to surface as retrieved context for any other customer's query."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "RAG-CROSSTENANT-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["retrieval_service.py"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

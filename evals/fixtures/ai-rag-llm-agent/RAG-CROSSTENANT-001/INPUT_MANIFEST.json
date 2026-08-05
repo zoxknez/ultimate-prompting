@@ -1,0 +1,12 @@
+{
+  "fixture_id": "RAG-CROSSTENANT-001",
+  "files": [
+    {
+      "path": "retrieval_service.py",
+      "sha256": "1f279692c70c1d1244dc3978e215315ea785bc4f83ed12458aa50a5b2fe59cc4",
+      "size_bytes": 658,
+      "file_type": "text/x-python",
+      "submission_order": 1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fixture_id": "PYSIDE-INSECUREUPDATE-001",
+  "stack_id": "python-pyside6-desktop",
+  "synthetic": true,
+  "license": "MIT",
+  "contains_real_credentials": false,
+  "contains_production_data": false,
+  "source_provenance": "authored-for-evaluation",
+  "allowed_execution": false,
+  "safe_fix_mode": "not-applicable",
+  "safe_fix_required": false
+}

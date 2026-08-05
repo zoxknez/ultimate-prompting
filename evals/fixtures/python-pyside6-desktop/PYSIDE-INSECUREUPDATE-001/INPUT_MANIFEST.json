@@ -1,0 +1,12 @@
+{
+  "fixture_id": "PYSIDE-INSECUREUPDATE-001",
+  "files": [
+    {
+      "path": "updater.py",
+      "sha256": "910c4cab894572193a028cec53dcd3f8c7becbf291a6f273d3a6f342ccc9c9fb",
+      "size_bytes": 658,
+      "file_type": "text/x-python",
+      "submission_order": 1
+    }
+  ]
+}

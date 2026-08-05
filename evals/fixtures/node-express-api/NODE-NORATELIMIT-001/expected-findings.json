@@ -1,0 +1,22 @@
+{
+  "fixture_id": "NODE-NORATELIMIT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved account-enumeration golden finding for node-express-api: the password-reset endpoint has no rate limiting and returns a distinct 404 for unknown emails, letting an attacker enumerate registered accounts and brute-force at unlimited speed."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "NODE-NORATELIMIT-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["routes/password-reset.js"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

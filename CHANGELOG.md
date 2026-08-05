@@ -40,6 +40,19 @@
   flutter-dart-mobile), `WP-DEBUGEXPOSED-001` (P1 - `WP_DEBUG` and `WP_DEBUG_DISPLAY` both enabled on a
   config the file's own comment identifies as production, wordpress-security-recovery-hardening). Public
   fixture count: 26 -> 30. Severity distribution across the 12 real fixtures: 6 P0, 6 P1 - balanced.
+- 4 more real fixtures, covering the last 3 stacks that had zero real content
+  (ai-rag-llm-agent, python-pyside6-desktop, react-native-expo-mobile all had only generated
+  placeholders until now) plus one more P1 for balance: `RAG-CROSSTENANT-001` (P0 - vector similarity
+  search has no tenant/workspace filter, so any customer's embedded documents can surface as retrieved
+  context for another customer's query, ai-rag-llm-agent), `PYSIDE-INSECUREUPDATE-001` (P0 - the
+  auto-updater fetches and executes a binary over plain HTTP with no signature or checksum verification,
+  python-pyside6-desktop), `RN-WEBVIEWORIGIN-001` (P1 - a deep-link-controlled URL is loaded in a WebView
+  with `javaScriptEnabled` and `originWhitelist: ["*"]`, react-native-expo-mobile), `NODE-NORATELIMIT-001`
+  (P1 - password-reset endpoint has no rate limiting and leaks account existence via a distinct 404,
+  node-express-api). All 4 independently re-verified (schema validation, re-computed manifest hashes,
+  secret-pattern scan, gitignore check) before committing. Public fixture count: 30 -> 34. Severity
+  distribution across the 16 real fixtures: 8 P0, 8 P1 - the P0 target from early planning (>= 8) is now
+  met; P1 (target >= 16) still needs 8 more.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

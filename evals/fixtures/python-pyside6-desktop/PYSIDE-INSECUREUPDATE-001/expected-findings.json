@@ -1,0 +1,22 @@
+{
+  "fixture_id": "PYSIDE-INSECUREUPDATE-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved insecure-auto-update golden finding for python-pyside6-desktop: the update binary is fetched over plain HTTP and executed with no signature or checksum verification."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "PYSIDE-INSECUREUPDATE-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["updater.py"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

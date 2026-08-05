@@ -1,0 +1,12 @@
+{
+  "fixture_id": "RN-WEBVIEWORIGIN-001",
+  "files": [
+    {
+      "path": "screens/PromoWebView.tsx",
+      "sha256": "b9dbc728a429b131195013bfed64ad084f38c7d21051148bca861245f9731ba4",
+      "size_bytes": 808,
+      "file_type": "text/tsx",
+      "submission_order": 1
+    }
+  ]
+}

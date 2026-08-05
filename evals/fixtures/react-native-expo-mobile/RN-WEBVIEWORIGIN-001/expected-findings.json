@@ -1,0 +1,22 @@
+{
+  "fixture_id": "RN-WEBVIEWORIGIN-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved unrestricted-WebView golden finding for react-native-expo-mobile: a deep-link-controlled URL is loaded with javaScriptEnabled and originWhitelist [\"*\"], letting a crafted deep link open arbitrary attacker-controlled pages with full JS execution."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "RN-WEBVIEWORIGIN-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["screens/PromoWebView.tsx"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

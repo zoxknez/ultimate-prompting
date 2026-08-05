@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NODE-NORATELIMIT-001",
+  "files": [
+    {
+      "path": "routes/password-reset.js",
+      "sha256": "6ec59378bc4a77f33a0a7db1f64ff3e28aa5d859bbc8c8c17222f716fe438254",
+      "size_bytes": 929,
+      "file_type": "text/javascript",
+      "submission_order": 1
+    }
+  ]
+}
