@@ -41,6 +41,12 @@ def main() -> int:
         success &= run_check_script("check_parity.py")
         success &= run_check_script("check_baselines.py")
         success &= run_check_script("compose.py", ["--check-lock"])
+        # Phase 5 pilot stacks are migrated to lossless stack-local-sections composition
+        # and must stay byte-equivalent to their v2.0.0 reference. The remaining 14 stacks
+        # are still pending Phase 6/7 migration and are intentionally not gated here yet.
+        success &= run_check_script("compose.py", ["--stack", "nextjs-master", "--check"])
+        success &= run_check_script("compose.py", ["--stack", "wordpress-security-recovery-hardening", "--check"])
+        success &= run_check_script("check_section_loss.py")
         success &= run_check_script("check_eval_coverage.py")
         success &= run_check_script("run_evals.py", ["--suite", "regression", "--provider", "mock"])
 

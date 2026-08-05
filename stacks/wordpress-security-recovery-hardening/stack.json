@@ -1,23 +1,20 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "stack_id": "wordpress-security-recovery-hardening",
   "prompt_slug": "wordpress-security-recovery-hardening-prompt",
   "name": "WordPress Security Recovery & Hardening Audit",
+  "composition_mode": "stack-local-sections",
   "active_baseline": "baselines/history/wordpress-security-recovery-hardening/2026-08-05.json",
-  "components": {
-    "en": [
-      "core/en/audit-operating-contract.md",
-      "core/en/severity-model.md",
-      "core/en/final-report-schema.md",
-      "core/en/production-readiness-dod.md",
-      "stacks/wordpress-security-recovery-hardening/overlay.en.md"
-    ],
-    "sr": [
-      "core/sr/audit-operating-contract.md",
-      "core/sr/severity-model.md",
-      "core/sr/final-report-schema.md",
-      "core/sr/production-readiness-dod.md",
-      "stacks/wordpress-security-recovery-hardening/overlay.sr.md"
-    ]
+  "core_modules": {
+    "en": [],
+    "sr": []
+  },
+  "contract_modules": {
+    "en": [],
+    "sr": []
+  },
+  "sections_manifest": {
+    "en": "stacks/wordpress-security-recovery-hardening/sections.en.json",
+    "sr": "stacks/wordpress-security-recovery-hardening/sections.sr.json"
   }
 }

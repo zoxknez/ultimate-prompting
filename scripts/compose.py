@@ -64,10 +64,38 @@ def generate_composition_lock() -> dict:
     return lock_data
 
 
+def compose_stack_local_sections(stack_config: dict, locale: str) -> str:
+    """Concatenate byte-exact section chunks (+ optional core/contract modules) in manifest order.
+
+    Section chunks are produced by scripts/decompose_master.py as exact substrings of the
+    original v2.0.0 file, so concatenating them with no added separators reproduces the
+    original file exactly when no core/contract modules are prepended yet (Phase 5 checkpoint).
+    """
+    parts = []
+    for rel in stack_config.get("core_modules", {}).get(locale, []):
+        parts.append(read_file_content(rel) + "\n\n")
+    for rel in stack_config.get("contract_modules", {}).get(locale, []):
+        parts.append(read_file_content(rel) + "\n\n")
+
+    manifest_rel = stack_config["sections_manifest"][locale]
+    manifest_path = ROOT / manifest_rel
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    for section_rel in manifest["sections"]:
+        section_path = ROOT / section_rel
+        parts.append(section_path.read_text(encoding="utf-8"))
+
+    return "".join(parts)
+
+
 def compose_prompt(stack_info: dict, locale: str) -> str:
     stack_id = stack_info["stack_id"]
     stack_json_path = ROOT / "stacks" / stack_id / "stack.json"
-    
+
+    if stack_json_path.exists():
+        stack_config = json.loads(stack_json_path.read_text(encoding="utf-8"))
+        if stack_config.get("composition_mode") == "stack-local-sections":
+            return compose_stack_local_sections(stack_config, locale)
+
     if not stack_json_path.exists():
         # Fallback for stacks not yet migrated to directory structure
         overlay_name = f"{stack_id}-audit-overlay.md"
