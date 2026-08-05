@@ -2,7 +2,8 @@
 
 Bilingual English/Serbian library of evidence-first master prompts for deep technical audits, safe remediation, production readiness, incident response and recovery.
 
-**Library version:** 2.0.0  
+**Library content version:** 2.0.0 (every prompt file is byte-identical to the audited v2.0.0 release; see [CHANGELOG.md](CHANGELOG.md))  
+**Maintenance architecture:** stack-local-sections composer (see Maintenance Architecture below)  
 **Baseline date:** 2026-08-05  
 **Active packages:** 16  
 **Active prompt files:** 32  
@@ -37,21 +38,37 @@ The library is not a guarantee that a system is secure or production-ready. Resu
 
 ## Recommended Use
 
-1. Select the closest stack prompt.
+1. Select the closest stack prompt file directly - each `*.en.md` / `*.sr.md` is a complete, self-contained operating contract. No other file needs to be attached.
 2. Provide the repository, artifacts, runtime/deployment context and business-critical flows.
-3. Include the shared files from `core/` when the target model supports multiple files.
-4. Select `AUDIT_ONLY`, safe-fix, incident-response or equivalent mode defined by the prompt.
-5. Require the agent to distinguish facts, observations, hypotheses and unknowns.
-6. Do not approve destructive changes without evidence, impact and rollback.
-7. Re-run the prescribed verification and failure scenarios after changes.
-8. Keep the final report and evidence IDs with the release or incident record.
+3. Select `AUDIT_ONLY`, safe-fix, incident-response or equivalent mode defined by the prompt.
+4. Require the agent to distinguish facts, observations, hypotheses and unknowns.
+5. Do not approve destructive changes without evidence, impact and rollback.
+6. Re-run the prescribed verification and failure scenarios after changes.
+7. Keep the final report and evidence IDs with the release or incident record.
 
-## Shared Contracts
+## Maintenance Architecture
 
-- `core/audit-operating-contract.md` - evidence-first operating rules
-- `core/severity-model.md` - common P0-P3 severity model
-- `core/final-report-schema.md` - final report structure
-- `core/production-readiness-dod.md` - shared production readiness Definition of Done
+The 32 root-level prompt files are the release artifact users read. They are also **compiled**: each one is
+composed from smaller, version-controlled pieces so the library can be maintained without hand-editing
+900-1600 line files, while staying byte-for-byte equivalent to the audited v2.0.0 content.
+
+```text
+stacks/<stack-id>/sections/<en|sr>/NNN-*.md   stack-local content, split at the original heading
+                                               boundaries with zero rewording (scripts/decompose_master.py)
+stacks/<stack-id>/sections.<locale>.json      ordered manifest: which section files (and, where proven
+                                               safe, which shared contracts/ modules) compose the prompt
+contracts/evidence/*.md                       genuinely shared modules - only introduced once proven
+                                               byte-identical in BOTH locales across the stacks that use them
+```
+
+Run `python scripts/compose.py --check` to verify every root prompt file still matches what its sections
+reconstruct, and `python scripts/check_section_loss.py` to verify zero controls were lost against the frozen
+`archive/v2.0.0/SECTION_INVENTORY.json`. A shared module is only extracted from stack-local content when it
+carries the same normative meaning, drops no stack-specific exception, holds in both EN and SR, and is
+verified regression-free - most stacks were independently authored and genuinely differ (e.g. the
+`wordpress-security-recovery-hardening` evidence/severity model is a forensics chain-of-custody scheme, not
+the E0-E5 production-audit scale most other stacks use), so most content stays stack-local by design rather
+than forced into a one-size-fits-all core.
 
 ## Baselines
 
@@ -61,15 +78,21 @@ Never invent a future patch number. Never upgrade solely because a newer major e
 
 ## Validation
 
-Run:
+Run the full release gate locally (also run in CI on every push/PR, see `.github/workflows/validate.yml`):
 
 ```bash
-python scripts/check_parity.py
-python scripts/check_integrity.py
-python scripts/check_baselines.py
+pip install -r requirements.txt
+python scripts/validate_release.py --static
 ```
 
-The checks validate active EN/SR pair discovery, heading depth, line-shape parity, YAML frontmatter, version metadata, JSON source manifests, balanced fenced blocks, banned baseline hardcodes and Serbian dash-style rules.
+That single command runs, in order: `check_integrity.py` (EN/SR pair discovery, heading depth, line-shape
+parity, YAML frontmatter, version metadata, JSON source manifests, balanced fenced blocks, Serbian
+dash-style rules), `check_parity.py` (heading-count/depth parity), `check_baselines.py` (banned invented
+patch-version hardcodes), `compose.py --check-lock` and `--check` (composition determinism and byte
+equivalence), `check_section_loss.py` (zero controls lost vs. `archive/v2.0.0/`), `check_eval_coverage.py`,
+and `run_evals.py` (the mock-provider regression suite). `check_source_links.py` makes live network calls
+against third-party sites and runs separately on a daily schedule (`.github/workflows/source-links.yml`),
+not on every push.
 
 Structural parity does not prove perfect semantic translation. Human or model-assisted bilingual review is still required for meaning-sensitive changes.
 
@@ -77,13 +100,15 @@ Structural parity does not prove perfect semantic translation. Human or model-as
 
 ```text
 .
-├── *.en.md / *.sr.md        active prompt pairs
-├── core/                    shared operating contracts
-├── baselines/               dated primary-source manifests
+├── *.en.md / *.sr.md        active prompt pairs (compiled release artifacts)
+├── stacks/                  per-stack sections/, sections.<locale>.json manifests, stack.json, baselines
+├── contracts/               shared modules extracted only after passing the 4-condition safety check
+├── baselines/               dated primary-source manifests + schema.json + sources.json registry
+├── evals/                   eval harness, provider adapters, fixtures, schemas, sandbox
 ├── reviews/                 Serbian revision reports
-├── scripts/                 repository validation tools
-├── stacks/                  reusable stack overlays
-└── archive/                 superseded prompt versions
+├── scripts/                 composer, validators, decomposition and migration tooling
+├── .github/workflows/       CI (release gate on push/PR, source-link check nightly)
+└── archive/v2.0.0/          frozen, tagged v2.0.0 snapshot + SECTION_INVENTORY.json used to prove zero loss
 ```
 
 ## Safety Notes

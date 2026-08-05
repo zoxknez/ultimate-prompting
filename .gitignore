@@ -28,6 +28,10 @@ Desktop.ini
 *credentials*
 *secret*
 
+# Eval execution runs and raw model outputs (not source of truth, may contain
+# provider-specific artifacts; see evals/README.md)
+evals/results/
+
 # Dependencies / build (if any tooling is added later)
 node_modules/
 vendor/

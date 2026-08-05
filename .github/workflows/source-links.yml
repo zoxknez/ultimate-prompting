@@ -1,0 +1,24 @@
+name: Source Link Check
+
+# Live network check against third-party baseline sources. Kept out of the
+# per-push validate.yml gate since it depends on external site availability
+# and could fail on transient network issues unrelated to this repository's
+# own correctness (see scripts/check_source_links.py).
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  check-source-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check baseline source links
+        run: python scripts/check_source_links.py

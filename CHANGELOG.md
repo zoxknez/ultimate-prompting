@@ -1,5 +1,53 @@
 # Changelog
 
+## [Unreleased] - Maintenance architecture rework
+
+No prompt content changed in this section - all 32 root `*.en.md`/`*.sr.md` files remain byte-identical to
+the tagged `v2.0.0` release (verified by `scripts/compose.py --check` and `scripts/check_section_loss.py`
+against `archive/v2.0.0/SECTION_INVENTORY.json`). What changed is how the library is built and maintained.
+
+### Added
+
+- `scripts/decompose_master.py`: lossless, byte-exact split of each master prompt into
+  `stacks/<id>/sections/<locale>/` at its original heading boundaries. Applied to all 16 stacks.
+- `scripts/compose.py` `stack-local-sections` composition mode: reconstructs each root prompt file from its
+  section manifest (`stacks/<id>/sections.<locale>.json`); `--check` verifies byte equivalence, `--check-lock`
+  verifies the `COMPOSITION_LOCK.json` input-hash lock.
+- `scripts/check_section_loss.py`: verifies every section-id recorded in the frozen
+  `archive/v2.0.0/SECTION_INVENTORY.json` is still present verbatim after decomposition (1856/1856 verified,
+  0 lost).
+- `contracts/evidence/finding-status-vocabulary-standard.{en,sr}.md`: the first (and, after auditing every
+  pairwise combination of the 16 stacks for byte-identical content, so far the only) genuinely shared module -
+  extracted from `ai-rag-llm-agent` and `android-master` only after confirming identical meaning in both
+  locales. Every other apparent similarity between stacks turned out to be either structural markdown
+  boilerplate (shared headings/table skeletons with no shared prose) or to fail EN/SR parity on inspection
+  (e.g. `node-express-api` and `php-laravel-symfony` share an English "Finding Status" block byte-for-byte,
+  but their Serbian translations use different vocabulary strategies - one keeps English status terms, the
+  other translates them - so it was not extracted).
+- `baselines/history/{ruby-rails,react-native-expo-mobile,sql-database,wordpress-security-recovery-hardening}/2026-08-05.json`
+  now carry the real, previously-researched baseline data (versions, maintenance policies, primary sources)
+  that existed but sat in orphaned root-level files never read by `baselines/index.json`'s pointer system.
+- `.github/workflows/validate.yml`: runs `scripts/validate_release.py --static` on every push/PR to `main`.
+- `.github/workflows/source-links.yml`: runs the live third-party URL check (`check_source_links.py`) daily,
+  kept off the per-push gate since it depends on external site availability.
+- `requirements.txt` (PyYAML) - previously undeclared; `check_integrity.py` would fail on a clean environment
+  without it.
+
+### Fixed
+
+- `scripts/run_evals.py` and `scripts/validate_release.py --static` previously reported every fixture/gate as
+  passing regardless of actual recall/precision or eval coverage. Both now fail loudly on regression.
+- Removed the now-superseded `core/en/`, `core/sr/`, `templates/*.j2`, per-stack `overlay.*.md` placeholders,
+  `stacks/go-audit-overlay.md`, `stacks/rust-audit-overlay.md`, and `scripts/migrate_all_stacks.py`.
+- Dead link in `baselines/sources.json` (`crates.io/crates/tauri` → 404) replaced with the GitHub releases page.
+
+### Known limitations
+
+- Public eval fixtures (17 total) are still synthetic scaffolding for exercising the harness, not real
+  vulnerable-code samples; the `mock` provider is the only wired provider (no live LLM adapters yet).
+- Only 2 of 16 stacks have a proven shared module; the rest were independently authored and genuinely differ
+  in structure and evidence-model semantics, so most content remains intentionally stack-local.
+
 ## [2.0.0] - 2026-08-05
 
 ### Added
