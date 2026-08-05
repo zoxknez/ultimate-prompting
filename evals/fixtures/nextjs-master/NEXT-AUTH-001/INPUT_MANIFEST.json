@@ -3,10 +3,17 @@
   "files": [
     {
       "path": "app/actions/delete-user.ts",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "size_bytes": 420,
+      "sha256": "a1393bff58282762df7f3edd95c6dc0bf7878a564cc18b712a424a7f47f3ef6b",
+      "size_bytes": 516,
       "file_type": "text/typescript",
       "submission_order": 1
+    },
+    {
+      "path": "app/layout.tsx",
+      "sha256": "81249a705e36334b8526c3b0d9dc77075d9afe928d96e490fd6d9e66400ba480",
+      "size_bytes": 169,
+      "file_type": "text/typescript",
+      "submission_order": 2
     }
   ]
 }

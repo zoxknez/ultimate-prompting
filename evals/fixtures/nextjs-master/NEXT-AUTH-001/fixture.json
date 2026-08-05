@@ -6,7 +6,7 @@
   "contains_real_credentials": false,
   "contains_production_data": false,
   "source_provenance": "authored-for-evaluation",
-  "allowed_execution": true,
+  "allowed_execution": false,
   "safe_fix_mode": "not-applicable",
   "safe_fix_required": false
 }

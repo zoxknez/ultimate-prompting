@@ -1,0 +1,12 @@
+{
+  "fixture_id": "RN-ASYNCSTORAGE-001",
+  "files": [
+    {
+      "path": "authStorage.ts",
+      "sha256": "fb0f55a6e0aef5b0adb15926a60169da45d1af50c90b54799192101f7dfb277f",
+      "size_bytes": 735,
+      "file_type": "text/typescript",
+      "submission_order": 1
+    }
+  ]
+}

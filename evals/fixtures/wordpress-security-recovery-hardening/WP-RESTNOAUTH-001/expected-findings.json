@@ -1,0 +1,22 @@
+{
+  "fixture_id": "WP-RESTNOAUTH-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved unauthenticated-REST-endpoint golden finding for wordpress-security-recovery-hardening: permission_callback is hardcoded to '__return_true', so the customer PII endpoint is reachable by anyone with no authentication. The SQL query itself is correctly parameterized via $wpdb->prepare, so this fixture also verifies the auditor doesn't wrongly report SQL injection here instead of the real authorization gap."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "WP-RESTNOAUTH-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["includes/rest-api.php"]
+    }
+  ],
+  "forbidden_findings": ["WP-RESTNOAUTH-SQLI-FALSE-POS-01"],
+  "expected_clean_areas": []
+}

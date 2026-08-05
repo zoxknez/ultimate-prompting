@@ -1,0 +1,22 @@
+{
+  "fixture_id": "RN-ASYNCSTORAGE-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved insecure-storage golden finding for react-native-expo-mobile: a long-lived refresh token is persisted via AsyncStorage, unencrypted on both platforms, instead of expo-secure-store."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "RN-ASYNCSTORAGE-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["authStorage.ts"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

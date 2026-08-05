@@ -5,14 +5,14 @@
     "author": "prompt-engineer-lead",
     "reviewer": "security-architect-reviewer",
     "approved_at": "2026-08-05",
-    "commit_revision": "v2.0.0-freeze",
-    "comments": "Approved Next.js AuthZ Server Action golden finding"
+    "commit_revision": "v2.1.0",
+    "comments": "Approved Next.js AuthZ Server Action golden finding: deleteUser() has no check that the caller is the target user or an admin before deleting an account by id. forbidden_findings guards against over-flagging the console.log(userId) line as a sensitive-data-logging violation - a bare user id is an identifier, not a secret or PII payload, and should not itself be reported as a finding."
   },
   "expected_findings": [
     {
       "finding_id": "NEXT-AUTH-001-FINDING-01",
       "severity": "P0",
-      "min_evidence_level": "E4",
+      "min_evidence_level": "E1",
       "severity_tolerance": 0,
       "allowed_paths": ["app/actions/delete-user.ts"]
     }

@@ -1,0 +1,12 @@
+{
+  "fixture_id": "WP-RESTNOAUTH-001",
+  "files": [
+    {
+      "path": "includes/rest-api.php",
+      "sha256": "6a19fc06836116a9ff0eda688b8161611a36eac878cfb916cf0cc2150c31171d",
+      "size_bytes": 905,
+      "file_type": "text/php",
+      "submission_order": 1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fixture_id": "DOTNET-JWTNOVERIFY-001",
+  "files": [
+    {
+      "path": "JwtAuthSetup.cs",
+      "sha256": "03959afd2228b346bd6dfb13320246720271648d9bc418d5e554e34fb5287cc3",
+      "size_bytes": 1029,
+      "file_type": "text/x-csharp",
+      "submission_order": 1
+    }
+  ]
+}

@@ -95,6 +95,25 @@
   manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture count
   unchanged at 42 (4 fake removed, 4 real added); real (non-generated) fixture count: 24 -> 28; remaining
   tautological placeholders: 17 -> 13.
+- Completed `NEXT-AUTH-001` and retired 3 more placeholders. `NEXT-AUTH-001` already had a well-specified
+  golden expectation (a Next.js `deleteUser()` Server Action with no ownership/admin check) and a named
+  `forbidden_findings` entry and `expected_clean_areas` file, but - like the other 17 - its
+  `INPUT_MANIFEST.json` hash was literally the SHA-256 of an empty string, with no real file behind it.
+  Wrote the actual `app/actions/delete-user.ts` (the real vulnerability, plus a `console.log(userId)`
+  line so the fixture also verifies the auditor doesn't over-flag a bare user id as a sensitive-data-
+  logging violation) and a genuinely clean `app/layout.tsx` for the `expected_clean_areas` entry to point
+  at. Also retired `DOTNET-ASPNET-CORE-FIX-001`, `REACT-NATIVE-EXPO-MOBILE-FIX-001`, and
+  `WORDPRESS-SECURITY-RECOVERY-HARDENING-FIX-001`, replaced with: `DOTNET-JWTNOVERIFY-001` (P0 -
+  `ValidateIssuerSigningKey`/`ValidateIssuer`/`ValidateAudience` all explicitly disabled, so any
+  caller-crafted JWT is accepted as authenticated), `RN-ASYNCSTORAGE-001` (P1 - a long-lived refresh
+  token persisted via `AsyncStorage`, unencrypted on both platforms, instead of `expo-secure-store`),
+  `WP-RESTNOAUTH-001` (P0 - a customer-PII REST endpoint registered with `permission_callback =>
+  '__return_true'`, reachable by anyone with no authentication; the SQL itself is correctly parameterized
+  via `$wpdb->prepare`, so this fixture also verifies the auditor reports the real authorization gap
+  instead of a spurious SQL-injection finding). All 4 independently re-verified (schema validation,
+  re-computed manifest hashes for every file including NEXT-AUTH-001's now-real ones, secret-pattern
+  scan, gitignore check) before committing. Public fixture count unchanged at 42; real fixture count:
+  28 -> 32 (28 + NEXT-AUTH-001 completed in place + 3 new); remaining tautological placeholders: 13 -> 9.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 
