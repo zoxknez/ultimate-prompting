@@ -1,0 +1,22 @@
+{
+  "fixture_id": "RUBY-MASSASSIGN-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved mass-assignment golden finding for ruby-rails: params.require(:user).permit! allows any client-supplied attribute through, including email_verified, bypassing the verification flow."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "RUBY-MASSASSIGN-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["app/controllers/profiles_controller.rb"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

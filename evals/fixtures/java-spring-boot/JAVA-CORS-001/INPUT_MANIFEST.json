@@ -1,0 +1,12 @@
+{
+  "fixture_id": "JAVA-CORS-001",
+  "files": [
+    {
+      "path": "src/main/java/com/example/config/WebConfig.java",
+      "sha256": "613768c3ac026b55bae9805e1e12ad17aad73ee87cdd5364a25f16356a7585e1",
+      "size_bytes": 847,
+      "file_type": "text/x-java",
+      "submission_order": 1
+    }
+  ]
+}

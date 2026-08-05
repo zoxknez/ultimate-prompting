@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- 4 new real, dual-approved public regression fixtures with actual vulnerable source files (not
+  synthetic metadata-only placeholders): `PHP-SQLI-001` (raw SQL built from unsanitized request input,
+  Laravel), `NODE-IDOR-001` (authenticated-but-not-authorized cross-tenant invoice access, Express),
+  `RUBY-MASSASSIGN-001` (`params.require(:user).permit!` allowing arbitrary attribute mass assignment,
+  Rails), `JAVA-CORS-001` (`allowedOriginPatterns("*")` combined with `allowCredentials(true)`, Spring
+  Boot). 2 are P0 (SQLi, IDOR), 2 are P1 (mass assignment, CORS) - the first fixtures in the public suite
+  with a severity other than P0. Public fixture count: 18 -> 22.
+
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 
 No prompt content changed in this section - all 32 root `*.en.md`/`*.sr.md` files remain byte-identical to

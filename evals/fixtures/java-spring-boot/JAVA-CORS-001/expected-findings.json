@@ -1,0 +1,22 @@
+{
+  "fixture_id": "JAVA-CORS-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved CORS misconfiguration golden finding for java-spring-boot: allowedOriginPatterns(\"*\") combined with allowCredentials(true) lets any origin read authenticated API responses cross-origin."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "JAVA-CORS-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["src/main/java/com/example/config/WebConfig.java"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

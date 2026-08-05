@@ -1,0 +1,22 @@
+{
+  "fixture_id": "PHP-SQLI-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved SQL injection golden finding for php-laravel-symfony: unsanitized request input concatenated directly into a raw DB::select query."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "PHP-SQLI-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["app/Http/Controllers/ReportController.php"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

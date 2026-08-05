@@ -1,0 +1,12 @@
+{
+  "fixture_id": "PHP-SQLI-001",
+  "files": [
+    {
+      "path": "app/Http/Controllers/ReportController.php",
+      "sha256": "29c0cf6fe03d4b6ff821da881a7f22a6d559a3843ddd612e1469f780c784fc10",
+      "size_bytes": 496,
+      "file_type": "text/php",
+      "submission_order": 1
+    }
+  ]
+}

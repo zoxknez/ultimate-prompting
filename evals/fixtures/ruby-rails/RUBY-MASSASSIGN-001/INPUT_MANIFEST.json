@@ -1,0 +1,12 @@
+{
+  "fixture_id": "RUBY-MASSASSIGN-001",
+  "files": [
+    {
+      "path": "app/controllers/profiles_controller.rb",
+      "sha256": "3261bf17784f8def0bd8bd50a1a1cb9de300098ef060f53e20b2a56d44933c8b",
+      "size_bytes": 535,
+      "file_type": "text/x-ruby",
+      "submission_order": 1
+    }
+  ]
+}

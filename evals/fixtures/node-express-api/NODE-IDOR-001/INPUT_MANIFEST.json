@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NODE-IDOR-001",
+  "files": [
+    {
+      "path": "routes/invoices.js",
+      "sha256": "35b7830abb36a37ec1087623654567bf55d239a569a81bfe3d36ad12225b7394",
+      "size_bytes": 631,
+      "file_type": "text/javascript",
+      "submission_order": 1
+    }
+  ]
+}
