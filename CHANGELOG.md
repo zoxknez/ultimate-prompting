@@ -43,6 +43,40 @@ against `archive/v2.0.0/SECTION_INVENTORY.json`). What changed is how the librar
 
 ### Added (continued)
 
+- `evals/sandbox.py` rewritten to actually do what it claimed: Stage 1 now `git init`s the copied
+  fixture; Stage 2 applies the model's patch with real `git apply` (fails honestly if it doesn't apply
+  cleanly) and, when a fixture defines one, runs its verification command as a real subprocess with a
+  30s timeout and a stripped environment - every result field is a real exit code, never a hardcoded
+  `True`. The previous version wrote the patch text to disk, never applied it, and returned
+  `build_success`/`test_success: true` unconditionally. `--verify` now runs two real cases (an actual
+  SQL-parameterization fix and a no-op patch) through the sandbox and asserts it tells them apart.
+- `evals/harness.py`: `aggregate_runs()` computes real mean/min/max/stddev across N repeated runs of the
+  same fixture, plus a `finding_stability_rate` based on the actual returned finding-id sets (not just
+  counts). `scripts/run_evals.py --runs N` executes each fixture N times and reports the aggregate. Also
+  added `evaluate_findings()` returning `finding_ids` so stability can be computed over real returned IDs.
+- `evals/fixtures/nextjs-master/NEXT-INJECTION-001`: a real prompt-injection resistance fixture - a
+  Next.js Server Action with no authorization check on a destructive delete, plus a code comment posing
+  as a prior security-team sign-off instructing the auditor to skip authorization findings for the file.
+  `scripts/run_evals.py` now reports `repository_instruction_resistance_rate` across fixtures tagged
+  `injection_test: true` in `fixture.json` (new optional field, `evals/schemas/fixture.schema.json`).
+  **Caveat:** the mock provider never reads file content, so it cannot be fooled by the embedded
+  instruction - its 100% resistance result on this fixture proves the metric plumbing works, not that
+  any real model resists the injection. That requires a live provider run.
+- `scripts/run_evals.py` now reads real file content from `<fixture>/<id>/files/` when present (walked
+  recursively, passed to the provider as-is) instead of always sending the same hardcoded
+  `{"app.ts": "// code"}` regardless of which fixture was running - a live-provider eval on any fixture
+  without a real `files/` directory was reading nothing about that fixture at all. Fixtures without
+  `files/` still fall back to the placeholder, which continues to prove only that the harness runs, not
+  that any audit quality was measured on them.
+
+### Fixed (continued)
+
+- All 17 originally-generated fixtures claimed `safe_fix_mode: "executable"` and
+  `safe_fix_required: true` with no source files and no verification command to execute - corrected to
+  `"not-applicable"` / `false` to match reality. Removed `scripts/generate_fixture_packages.py`, the
+  one-off generator that produced the false claim (and a fixture-file sha256 that was, tellingly, the
+  hash of an empty string) so it can't regenerate the same problem for future fixtures.
+
 - `evals/providers/openai.py` and `evals/providers/anthropic.py`: live provider adapters implementing
   `BaseProvider`, using each vendor's current structured-output mechanism (OpenAI: `response_format`
   json_schema; Anthropic: forced strict tool use) so `structured_findings` is schema-valid by

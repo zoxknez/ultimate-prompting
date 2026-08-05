@@ -67,7 +67,47 @@ def evaluate_findings(
         "false_negatives": fn_count,
         "forbidden_hits": forbidden_hits,
         "mean_severity_distance": round(mean_sev_dist, 2),
-        "total_actual_findings": total_actual
+        "total_actual_findings": total_actual,
+        "finding_ids": sorted(actual_ids.keys())
+    }
+
+
+def aggregate_runs(run_metrics: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Aggregate evaluate_findings() results from N runs of the same fixture.
+
+    Real statistics over real repeated runs - with a deterministic provider
+    (e.g. the mock adapter) every field collapses to zero variance and 100%
+    stability, which is itself a correct, verifiable result, not a stub.
+    """
+    if not run_metrics:
+        raise ValueError("aggregate_runs requires at least one run")
+
+    n = len(run_metrics)
+
+    def stats(key: str) -> Dict[str, float]:
+        values = [m[key] for m in run_metrics]
+        mean = sum(values) / n
+        variance = sum((v - mean) ** 2 for v in values) / n
+        return {
+            "mean": round(mean, 4),
+            "min": round(min(values), 4),
+            "max": round(max(values), 4),
+            "stddev": round(variance ** 0.5, 4),
+        }
+
+    # Stability: fraction of runs that returned the exact same set of finding_ids
+    # as the most common outcome - a real run-to-run consistency measurement.
+    signatures = [frozenset(m["finding_ids"]) for m in run_metrics]
+    most_common_signature = max(set(signatures), key=signatures.count)
+    stable_count = sum(1 for s in signatures if s == most_common_signature)
+
+    return {
+        "runs": n,
+        "precision": stats("precision"),
+        "recall": stats("recall"),
+        "f1": stats("f1"),
+        "mean_severity_distance": stats("mean_severity_distance"),
+        "finding_stability_rate": round(stable_count / n, 4),
     }
 
 

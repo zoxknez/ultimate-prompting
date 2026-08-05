@@ -7,6 +7,6 @@
   "contains_production_data": false,
   "source_provenance": "authored-for-evaluation",
   "allowed_execution": true,
-  "safe_fix_mode": "executable",
-  "safe_fix_required": true
+  "safe_fix_mode": "not-applicable",
+  "safe_fix_required": false
 }

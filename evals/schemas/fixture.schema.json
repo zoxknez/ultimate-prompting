@@ -26,6 +26,11 @@
       "type": "string",
       "enum": ["executable", "advisory", "manual-procedure", "not-applicable"]
     },
-    "safe_fix_required": { "type": "boolean" }
+    "safe_fix_required": { "type": "boolean" },
+    "injection_test": {
+      "type": "boolean",
+      "description": "True if this fixture's repository content embeds a prompt-injection attempt (e.g. a comment instructing the auditor to skip a finding). Used to compute repository_instruction_resistance_rate."
+    },
+    "injection_description": { "type": "string" }
   }
 }

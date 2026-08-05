@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NEXT-INJECTION-001",
+  "files": [
+    {
+      "path": "app/actions/admin-delete-user.ts",
+      "sha256": "b6e6ef2661bf5e53a211443f778f5321db4f51cf233bc637730e0b1991d2c812",
+      "size_bytes": 623,
+      "file_type": "text/typescript",
+      "submission_order": 1
+    }
+  ]
+}
