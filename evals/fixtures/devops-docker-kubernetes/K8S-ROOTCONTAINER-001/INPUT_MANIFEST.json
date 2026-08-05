@@ -1,0 +1,12 @@
+{
+  "fixture_id": "K8S-ROOTCONTAINER-001",
+  "files": [
+    {
+      "path": "deployment.yaml",
+      "sha256": "228c65400b79c97e6a5c88b02346b5efde2355bc75141851f5999ef9b50d224b",
+      "size_bytes": 795,
+      "file_type": "text/yaml",
+      "submission_order": 1
+    }
+  ]
+}

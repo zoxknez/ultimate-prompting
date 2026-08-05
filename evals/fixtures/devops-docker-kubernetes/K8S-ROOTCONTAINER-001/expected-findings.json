@@ -1,0 +1,22 @@
+{
+  "fixture_id": "K8S-ROOTCONTAINER-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved missing-securityContext golden finding for devops-docker-kubernetes: no runAsNonRoot or allowPrivilegeEscalation: false is set, so the container runs as root with no barrier against privilege escalation if the runtime or a dependency is compromised."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "K8S-ROOTCONTAINER-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["deployment.yaml"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

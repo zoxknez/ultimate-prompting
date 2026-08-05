@@ -1,0 +1,12 @@
+{
+  "fixture_id": "PHP-SESSIONFIX-001",
+  "files": [
+    {
+      "path": "app/Http/Controllers/Auth/LoginController.php",
+      "sha256": "65b3d7ecfc0a95ff3474834cbe2a56bc5bc7a7de8a6777077db75cddb9cafadf",
+      "size_bytes": 1004,
+      "file_type": "text/php",
+      "submission_order": 1
+    }
+  ]
+}

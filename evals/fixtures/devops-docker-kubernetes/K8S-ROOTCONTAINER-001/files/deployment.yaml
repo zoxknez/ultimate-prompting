@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-server
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: api-server
+          image: registry.example.com/api-server:2026.08.05
+          ports:
+            - containerPort: 8080
+          # Vulnerable: no securityContext is set at the container or pod
+          # level. The container image's default user is root (the base
+          # image never adds or switches to a non-root user), and without
+          # allowPrivilegeEscalation: false or runAsNonRoot: true, a
+          # container-escape bug in the runtime or a compromised dependency
+          # inside this pod runs as root and can attempt privilege
+          # escalation on the host, not just within an already-limited
+          # container user.

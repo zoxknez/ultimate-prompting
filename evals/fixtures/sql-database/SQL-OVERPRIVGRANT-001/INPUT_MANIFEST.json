@@ -1,0 +1,12 @@
+{
+  "fixture_id": "SQL-OVERPRIVGRANT-001",
+  "files": [
+    {
+      "path": "migrations/001_create_app_user.sql",
+      "sha256": "c201c513074bc37fc3bc45168ab01ce5f00c9eb97687c6a7bfb036576d694759",
+      "size_bytes": 672,
+      "file_type": "text/x-sql",
+      "submission_order": 1
+    }
+  ]
+}

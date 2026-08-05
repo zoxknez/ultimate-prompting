@@ -1,0 +1,12 @@
+{
+  "fixture_id": "JAVA-CLICKJACK-001",
+  "files": [
+    {
+      "path": "src/main/java/com/example/config/SecurityConfig.java",
+      "sha256": "80e4fae4e05bb857293fc6e82bc01c7d15c62d47a39409f3636535da18d7e315",
+      "size_bytes": 972,
+      "file_type": "text/x-java",
+      "submission_order": 1
+    }
+  ]
+}

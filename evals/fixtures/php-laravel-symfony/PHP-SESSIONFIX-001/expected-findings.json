@@ -1,0 +1,22 @@
+{
+  "fixture_id": "PHP-SESSIONFIX-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved session-fixation golden finding for php-laravel-symfony: the session ID is never regenerated after Auth::attempt() succeeds, so a pre-fixed session ID remains valid after the victim authenticates."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "PHP-SESSIONFIX-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["app/Http/Controllers/Auth/LoginController.php"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

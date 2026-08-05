@@ -1,0 +1,22 @@
+{
+  "fixture_id": "SQL-OVERPRIVGRANT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved excessive-privilege golden finding for sql-database: the application's runtime user is granted ALL PRIVILEGES on *.* WITH GRANT OPTION when it only needs DML on its own schema, widening the blast radius of any compromise of this one service."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "SQL-OVERPRIVGRANT-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["migrations/001_create_app_user.sql"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

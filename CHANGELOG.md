@@ -53,6 +53,17 @@
   secret-pattern scan, gitignore check) before committing. Public fixture count: 30 -> 34. Severity
   distribution across the 16 real fixtures: 8 P0, 8 P1 - the P0 target from early planning (>= 8) is now
   met; P1 (target >= 16) still needs 8 more.
+- 4 more real fixtures, all P1 by design to keep closing the P1 gap: `JAVA-CLICKJACK-001` (frame options
+  explicitly disabled with no compensating CSP frame-ancestors, java-spring-boot), `PHP-SESSIONFIX-001`
+  (session ID never regenerated after `Auth::attempt()` succeeds - session fixation,
+  php-laravel-symfony), `SQL-OVERPRIVGRANT-001` (application runtime user granted `ALL PRIVILEGES ON *.*
+  WITH GRANT OPTION` instead of least-privilege DML on its own schema, sql-database),
+  `K8S-ROOTCONTAINER-001` (no `securityContext` - container runs as root with no
+  `allowPrivilegeEscalation: false` barrier, devops-docker-kubernetes; a second, distinct finding from
+  `DOCKER-LAYERLEAK-001` in the same stack). All 4 independently re-verified (schema validation,
+  re-computed manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture
+  count: 34 -> 38. Severity distribution across the 20 real fixtures: 8 P0, 12 P1 - 4 more P1 needed to
+  reach the >= 16 target from early planning.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

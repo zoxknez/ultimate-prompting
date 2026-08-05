@@ -1,0 +1,22 @@
+{
+  "fixture_id": "JAVA-CLICKJACK-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved clickjacking golden finding for java-spring-boot: frame options protection is explicitly disabled with no compensating CSP frame-ancestors directive, allowing authenticated pages to be embedded and clickjacked."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "JAVA-CLICKJACK-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["src/main/java/com/example/config/SecurityConfig.java"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}
