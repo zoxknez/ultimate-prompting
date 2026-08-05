@@ -31,8 +31,8 @@ def compute_file_sha256(rel_path: str) -> str:
 def generate_composition_lock() -> dict:
     lock_data = {
         "schema_version": "1.0.0",
-        "generator_version": "1.0.0",
-        "template_engine": "jinja2_equivalent_native",
+        "generator_version": "2.0.0",
+        "template_engine": "stack_local_sections_concatenation",
         "encoding": "utf-8",
         "line_endings": "lf",
         "final_newline": True,
@@ -46,8 +46,8 @@ def generate_composition_lock() -> dict:
     }
     EXCLUDED_PREFIXES = ("archive/", "evals/results/", ".git/")
 
-    # Collect all source component files (core, stacks, baselines, templates, scripts)
-    SOURCE_PREFIXES = ("core/", "stacks/", "baselines/", "templates/", "scripts/")
+    # Collect all source component files (stacks, baselines, scripts)
+    SOURCE_PREFIXES = ("stacks/", "baselines/", "scripts/")
 
     for p in sorted(ROOT.rglob("*")):
         if not p.is_file():
@@ -91,59 +91,16 @@ def compose_prompt(stack_info: dict, locale: str) -> str:
     stack_id = stack_info["stack_id"]
     stack_json_path = ROOT / "stacks" / stack_id / "stack.json"
 
-    if stack_json_path.exists():
-        stack_config = json.loads(stack_json_path.read_text(encoding="utf-8"))
-        if stack_config.get("composition_mode") == "stack-local-sections":
-            return compose_stack_local_sections(stack_config, locale)
-
     if not stack_json_path.exists():
-        # Fallback for stacks not yet migrated to directory structure
-        overlay_name = f"{stack_id}-audit-overlay.md"
-        overlay_path = ROOT / "stacks" / overlay_name
-        overlay_text = overlay_path.read_text(encoding="utf-8").strip() if overlay_path.exists() else f"# {stack_id} Overlay\n"
-        
-        contract = read_file_content(f"core/{locale}/audit-operating-contract.md")
-        severity = read_file_content(f"core/{locale}/severity-model.md")
-        schema = read_file_content(f"core/{locale}/final-report-schema.md")
-        dod = read_file_content(f"core/{locale}/production-readiness-dod.md")
-        
-        baseline_file = ROOT / "baselines" / "history" / stack_id / "2026-08-05.json"
-        baseline_json = baseline_file.read_text(encoding="utf-8").strip() if baseline_file.exists() else "{}"
+        raise FileNotFoundError(f"Stack '{stack_id}' has no stacks/{stack_id}/stack.json.")
 
-        template = (ROOT / "templates" / f"master.{locale}.md.j2").read_text(encoding="utf-8")
-        rendered = template.replace("{{ stack_id }}", stack_id)
-        rendered = rendered.replace("{{ generator_version }}", "1.0.0")
-        rendered = rendered.replace("{{ core_contract }}", contract)
-        rendered = rendered.replace("{{ core_severity }}", severity)
-        rendered = rendered.replace("{{ core_report_schema }}", schema)
-        rendered = rendered.replace("{{ core_dod }}", dod)
-        rendered = rendered.replace("{{ stack_overlay }}", overlay_text)
-        rendered = rendered.replace("{{ baseline_json }}", baseline_json)
-        
-        return rendered.replace("\r\n", "\n").strip() + "\n"
-
-    # Fully migrated stack loading
     stack_config = json.loads(stack_json_path.read_text(encoding="utf-8"))
-    components = stack_config["components"][locale]
-    
-    parts = []
-    for rel_comp in components:
-        parts.append(read_file_content(rel_comp))
-
-    baseline_path = ROOT / stack_config["active_baseline"]
-    baseline_json = baseline_path.read_text(encoding="utf-8").strip() if baseline_path.exists() else "{}"
-    
-    template = (ROOT / "templates" / f"master.{locale}.md.j2").read_text(encoding="utf-8")
-    rendered = template.replace("{{ stack_id }}", stack_id)
-    rendered = rendered.replace("{{ generator_version }}", "1.0.0")
-    rendered = rendered.replace("{{ core_contract }}", parts[0] if len(parts) > 0 else "")
-    rendered = rendered.replace("{{ core_severity }}", parts[1] if len(parts) > 1 else "")
-    rendered = rendered.replace("{{ core_report_schema }}", parts[2] if len(parts) > 2 else "")
-    rendered = rendered.replace("{{ core_dod }}", parts[3] if len(parts) > 3 else "")
-    rendered = rendered.replace("{{ stack_overlay }}", "\n\n".join(parts[4:]))
-    rendered = rendered.replace("{{ baseline_json }}", baseline_json)
-
-    return rendered.replace("\r\n", "\n").strip() + "\n"
+    if stack_config.get("composition_mode") != "stack-local-sections":
+        raise ValueError(
+            f"Stack '{stack_id}' has unsupported composition_mode "
+            f"{stack_config.get('composition_mode')!r}; expected 'stack-local-sections'."
+        )
+    return compose_stack_local_sections(stack_config, locale)
 
 
 def main() -> int:
@@ -204,8 +161,8 @@ def main() -> int:
                     else:
                         print(f"OK   {target_filename} matches composer output.")
             else:
-                # Direct update mode (when authorized)
-                print(f"Skipping direct overwrite of master file {target_filename} until checkpoint.")
+                target_path.write_text(compiled_content, encoding="utf-8", newline="\n")
+                print(f"Wrote {target_filename} from composer output.")
 
     if args.check and diff_count > 0:
         print(f"\nComposer check failed with {diff_count} mismatch(es).")

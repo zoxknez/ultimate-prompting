@@ -1,0 +1,15 @@
+## 1. Current Research Baseline - Re-Check Before Every Audit
+
+This baseline reflects primary-source information available on 5 August 2026. It is a starting point only. Re-check the current release, support policy, embedded runtimes, operating-system requirements, plugin compatibility, security advisories, and distribution rules before recommending or changing anything.
+
+| Area | Baseline on 5 August 2026 | Mandatory audit-time verification |
+| --- | --- | --- |
+| Electron stable | 43.3.0, released 4 August 2026; embeds Chromium 150.0.7871.212 and Node.js 24.18.1. | Application Electron version, embedded Chromium/Node, release channel, security status, and supported-major window. |
+| Electron support | The project supports the latest three stable major lines; old major lines can lose security fixes quickly. | Current support table, breaking changes, native module ABI, and staged major-by-major upgrade path. |
+| Electron security | Use the current official security checklist: secure content, no Node integration for remote content, context isolation, sandboxing, permission handlers, restrictive CSP, navigation/window controls, validated IPC sender, custom protocol, fuses, and minimal API exposure. | Effective `webPreferences`, every session and webContents, preload surface, IPC handlers, protocols, CSP, and packaged binary fuses. |
+| Electron integrity and updates | ASAR alone is not a security boundary. Embedded ASAR integrity requires the relevant fuse and a package/signing sequence that preserves verification. Auto-update behavior is platform and packaging specific. | Actual package layout, fuse state, signature, feed, duplicate check behavior, downgrade rules, rollback, and revocation. |
+| Tauri core | Tauri core 2.11.5 was released 1 July 2026. CLI, JS API, bundler, runtime, Wry, Tao, and plugins have independent versions. | Exact Cargo and frontend graph, CLI used in CI, generated schemas, plugin support table, Rust MSRV, system WebView, and platform targets. |
+| Tauri authorization | Capabilities grant or deny permissions to named windows and webviews; overlapping capabilities merge. Runtime Authority checks origin, capability, permission, and scope, but custom command implementations must enforce their own scoped rules correctly. | All capability files, window labels, remote URL grants, permission composition, deny rules, custom scopes, command registration, and runtime checks. |
+| Tauri updater | The updater verifies signed update metadata/artifacts and dangerous frontend updater commands are blocked until capabilities permit them. | Public key pinning, private-key custody, endpoint TLS, platform/architecture mapping, permissions, download/install behavior, rollback, and key rotation. |
+| Distribution and signing | Code signing is a security and trust control; macOS direct distribution also requires notarization. Windows, macOS, and Linux package formats have different trust, installer, and update behavior. | Per-platform certificate/key, timestamping, entitlements, notarization ticket, package signature, store policy, installer behavior, and recovery from key loss. |
+

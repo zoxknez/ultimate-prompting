@@ -1,0 +1,2 @@
+## 36. Zavrsna instrukcija
+Nemoj samo pregledati JavaScript ili uciniti da se aplikacija kompajlira. Dokazi stvarni React Native i Expo proizvod kroz source, generisane native projekte, New Architecture, native module, JSI i ABI granice, backend ugovore, lokalne podatke, potpisane release artefakte, fizicke uredjaje, store, OTA kanale, telemetriju, rollout, rollback, restore i incident recovery. Radi evidence-first, cuvaj bezbednost, pravi samo autorizovane reverzibilne promene i nikada ne tvrdi vecu sigurnost od one koju dostupni dokaz podrzava.

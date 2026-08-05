@@ -17,7 +17,12 @@ INVENTORY_PATH = ROOT / "archive" / "v2.0.0" / "SECTION_INVENTORY.json"
 STACKS_INDEX = ROOT / "stacks" / "index.json"
 
 # Stacks migrated to lossless stack-local-sections composition so far.
-MIGRATED_STACKS = ["nextjs-master", "wordpress-security-recovery-hardening"]
+MIGRATED_STACKS = [
+    "ai-rag-llm-agent", "android-master", "devops-docker-kubernetes", "dotnet-aspnet-core",
+    "electron-tauri-desktop", "flutter-dart-mobile", "go-rust-backend", "java-spring-boot",
+    "nextjs-master", "node-express-api", "php-laravel-symfony", "python-pyside6-desktop",
+    "react-native-expo-mobile", "ruby-rails", "sql-database", "wordpress-security-recovery-hardening",
+]
 
 
 def main() -> int:

@@ -1,23 +1,20 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "stack_id": "dotnet-aspnet-core",
   "prompt_slug": "dotnet-aspnet-core-audit-prompt",
   "name": "dotnet-aspnet-core Production Audit",
+  "composition_mode": "stack-local-sections",
   "active_baseline": "baselines/history/dotnet-aspnet-core/2026-08-05.json",
-  "components": {
-    "en": [
-      "core/en/audit-operating-contract.md",
-      "core/en/severity-model.md",
-      "core/en/final-report-schema.md",
-      "core/en/production-readiness-dod.md",
-      "stacks/dotnet-aspnet-core/overlay.en.md"
-    ],
-    "sr": [
-      "core/sr/audit-operating-contract.md",
-      "core/sr/severity-model.md",
-      "core/sr/final-report-schema.md",
-      "core/sr/production-readiness-dod.md",
-      "stacks/dotnet-aspnet-core/overlay.sr.md"
-    ]
+  "core_modules": {
+    "en": [],
+    "sr": []
+  },
+  "contract_modules": {
+    "en": [],
+    "sr": []
+  },
+  "sections_manifest": {
+    "en": "stacks/dotnet-aspnet-core/sections.en.json",
+    "sr": "stacks/dotnet-aspnet-core/sections.sr.json"
   }
 }

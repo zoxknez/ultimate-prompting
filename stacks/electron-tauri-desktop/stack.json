@@ -1,23 +1,20 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "stack_id": "electron-tauri-desktop",
   "prompt_slug": "electron-tauri-desktop-audit-prompt",
   "name": "electron-tauri-desktop Production Audit",
+  "composition_mode": "stack-local-sections",
   "active_baseline": "baselines/history/electron-tauri-desktop/2026-08-05.json",
-  "components": {
-    "en": [
-      "core/en/audit-operating-contract.md",
-      "core/en/severity-model.md",
-      "core/en/final-report-schema.md",
-      "core/en/production-readiness-dod.md",
-      "stacks/electron-tauri-desktop/overlay.en.md"
-    ],
-    "sr": [
-      "core/sr/audit-operating-contract.md",
-      "core/sr/severity-model.md",
-      "core/sr/final-report-schema.md",
-      "core/sr/production-readiness-dod.md",
-      "stacks/electron-tauri-desktop/overlay.sr.md"
-    ]
+  "core_modules": {
+    "en": [],
+    "sr": []
+  },
+  "contract_modules": {
+    "en": [],
+    "sr": []
+  },
+  "sections_manifest": {
+    "en": "stacks/electron-tauri-desktop/sections.en.json",
+    "sr": "stacks/electron-tauri-desktop/sections.sr.json"
   }
 }

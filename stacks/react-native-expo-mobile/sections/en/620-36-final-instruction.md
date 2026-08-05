@@ -1,0 +1,2 @@
+## 36. Final Instruction
+Do not merely review JavaScript or make the application compile. Prove the real React Native and Expo product across source, generated native projects, New Architecture, native modules, JSI and ABI boundaries, backend contracts, local data, signed release artifacts, physical devices, stores, OTA channels, telemetry, rollout, rollback, restore, and incident recovery. Work evidence-first, preserve safety, make only authorized reversible changes, and never claim more certainty than the available evidence supports.
