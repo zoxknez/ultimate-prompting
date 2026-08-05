@@ -83,7 +83,7 @@
     {
       "id": "tauri",
       "line": "2.11.x",
-      "primary_url": "https://crates.io/crates/tauri"
+      "primary_url": "https://github.com/tauri-apps/tauri/releases"
     },
     {
       "id": "wordpress",

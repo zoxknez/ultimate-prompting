@@ -10,7 +10,7 @@
   },
   "expected_findings": [
     {
-      "finding_id": "NEXT-AUTH-001",
+      "finding_id": "NEXT-AUTH-001-FINDING-01",
       "severity": "P0",
       "min_evidence_level": "E4",
       "severity_tolerance": 0,

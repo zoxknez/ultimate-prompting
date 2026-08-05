@@ -74,10 +74,10 @@ def compose_prompt(stack_info: dict, locale: str) -> str:
         overlay_path = ROOT / "stacks" / overlay_name
         overlay_text = overlay_path.read_text(encoding="utf-8").strip() if overlay_path.exists() else f"# {stack_id} Overlay\n"
         
-        contract = read_file_content(f"core/{locale}/audit-operating-contract.md" if (ROOT / "core" / locale).exists() else "core/audit-operating-contract.md")
-        severity = read_file_content(f"core/{locale}/severity-model.md" if (ROOT / "core" / locale).exists() else "core/severity-model.md")
-        schema = read_file_content(f"core/{locale}/final-report-schema.md" if (ROOT / "core" / locale).exists() else "core/final-report-schema.md")
-        dod = read_file_content(f"core/{locale}/production-readiness-dod.md" if (ROOT / "core" / locale).exists() else "core/production-readiness-dod.md")
+        contract = read_file_content(f"core/{locale}/audit-operating-contract.md")
+        severity = read_file_content(f"core/{locale}/severity-model.md")
+        schema = read_file_content(f"core/{locale}/final-report-schema.md")
+        dod = read_file_content(f"core/{locale}/production-readiness-dod.md")
         
         baseline_file = ROOT / "baselines" / "history" / stack_id / "2026-08-05.json"
         baseline_json = baseline_file.read_text(encoding="utf-8").strip() if baseline_file.exists() else "{}"

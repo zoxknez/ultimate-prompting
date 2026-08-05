@@ -41,6 +41,8 @@ def main() -> int:
         success &= run_check_script("check_parity.py")
         success &= run_check_script("check_baselines.py")
         success &= run_check_script("compose.py", ["--check-lock"])
+        success &= run_check_script("check_eval_coverage.py")
+        success &= run_check_script("run_evals.py", ["--suite", "regression", "--provider", "mock"])
 
     if args.evidence:
         evidence_dir = Path(args.evidence)

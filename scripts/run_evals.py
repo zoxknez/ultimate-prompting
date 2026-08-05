@@ -35,6 +35,7 @@ def main() -> int:
 
     total_packages = 0
     passed_packages = 0
+    failed_names = []
 
     for stack_dir in sorted(FIXTURES_DIR.glob("*")):
         if not stack_dir.is_dir():
@@ -57,10 +58,20 @@ def main() -> int:
             res = provider.run_prompt("Sample prompt text", fix_meta, {"app.ts": "// code"}, model=args.model)
             metrics = evaluate_findings(res["structured_findings"], golden)
 
-            print(f"OK   [{stack_dir.name}/{fix_dir.name}] Recall: {metrics['recall']*100:.0f}%, Precision: {metrics['precision']*100:.0f}%")
-            passed_packages += 1
+            name = f"{stack_dir.name}/{fix_dir.name}"
+            is_pass = metrics["recall"] == 1.0 and metrics["precision"] == 1.0 and metrics["forbidden_hits"] == 0
+            status = "OK  " if is_pass else "FAIL"
+            print(f"{status} [{name}] Recall: {metrics['recall']*100:.0f}%, Precision: {metrics['precision']*100:.0f}%, Forbidden hits: {metrics['forbidden_hits']}")
+
+            if is_pass:
+                passed_packages += 1
+            else:
+                failed_names.append(name)
 
     print(f"\nCompleted evaluation for {passed_packages}/{total_packages} fixture packages.")
+    if failed_names:
+        print(f"FAILED ({len(failed_names)}): {', '.join(failed_names)}")
+        return 1
     return 0
 
 
