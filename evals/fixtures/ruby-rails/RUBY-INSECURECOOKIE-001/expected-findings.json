@@ -1,0 +1,22 @@
+{
+  "fixture_id": "RUBY-INSECURECOOKIE-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved insecure-session-cookie golden finding for ruby-rails: the session store is configured with no secure or httponly flag, exposing the session cookie to plain-HTTP interception and JavaScript access."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "RUBY-INSECURECOOKIE-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["config/initializers/session_store.rb"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

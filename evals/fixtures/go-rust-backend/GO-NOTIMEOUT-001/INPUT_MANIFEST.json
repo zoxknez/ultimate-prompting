@@ -1,0 +1,12 @@
+{
+  "fixture_id": "GO-NOTIMEOUT-001",
+  "files": [
+    {
+      "path": "cmd/server/main.go",
+      "sha256": "a5b33f10e2a38940a8f64c7db9170bc636f038cf6d9690f02b08b435a46356e2",
+      "size_bytes": 734,
+      "file_type": "text/x-go",
+      "submission_order": 1
+    }
+  ]
+}

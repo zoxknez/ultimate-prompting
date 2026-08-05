@@ -64,6 +64,17 @@
   re-computed manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture
   count: 34 -> 38. Severity distribution across the 20 real fixtures: 8 P0, 12 P1 - 4 more P1 needed to
   reach the >= 16 target from early planning.
+- 4 more real fixtures, all P1, closing the gap: `ANDROID-WEBVIEWFILEACCESS-001` (a WebView enables
+  `allowFileAccessFromFileURLs` and `allowUniversalAccessFromFileURLs` alongside JavaScript, letting a
+  reached page read local app files via `file://` URLs, android-master; a second, distinct finding from
+  `ANDROID-HARDCODEDKEY-001` in the same stack), `RUBY-INSECURECOOKIE-001` (session cookie configured
+  with no `secure`/`httponly` flag, ruby-rails), `GO-NOTIMEOUT-001` (`http.ListenAndServe` with the
+  zero-value `http.Server` - no Read/Write/Idle timeouts, enabling slowloris-style connection exhaustion,
+  go-rust-backend), `NODE-VERBOSEERR-001` (error-handling middleware returns `err.stack` to the client
+  unconditionally, node-express-api). All 4 independently re-verified (schema validation, re-computed
+  manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture count:
+  38 -> 42. Severity distribution across the 24 real fixtures: **8 P0, 16 P1** - both severity targets
+  from early planning (>= 8 P0, >= 16 P1) are now met.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

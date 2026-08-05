@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NODE-VERBOSEERR-001",
+  "files": [
+    {
+      "path": "errorHandler.js",
+      "sha256": "1544867c585afeacdabcd3b421292359df61aa0caa7025f5f9f81b2d3416e718",
+      "size_bytes": 585,
+      "file_type": "text/javascript",
+      "submission_order": 1
+    }
+  ]
+}

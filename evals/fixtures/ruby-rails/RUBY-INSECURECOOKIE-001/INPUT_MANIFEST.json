@@ -1,0 +1,12 @@
+{
+  "fixture_id": "RUBY-INSECURECOOKIE-001",
+  "files": [
+    {
+      "path": "config/initializers/session_store.rb",
+      "sha256": "eca8e451bae5b214b9929796a14795cad29930f1416cf57de153e47b134ada19",
+      "size_bytes": 571,
+      "file_type": "text/x-ruby",
+      "submission_order": 1
+    }
+  ]
+}

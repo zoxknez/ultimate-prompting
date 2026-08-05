@@ -1,0 +1,22 @@
+{
+  "fixture_id": "GO-NOTIMEOUT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved missing-timeout golden finding for go-rust-backend: http.ListenAndServe uses the zero-value http.Server with no Read/Write/Idle timeouts, allowing slowloris-style connection exhaustion."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "GO-NOTIMEOUT-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["cmd/server/main.go"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

@@ -1,0 +1,12 @@
+{
+  "fixture_id": "ANDROID-WEBVIEWFILEACCESS-001",
+  "files": [
+    {
+      "path": "app/src/main/java/com/example/app/SupportWebViewActivity.kt",
+      "sha256": "e1a33c256283ce893474232bc7e967a3e660855e95a21b1fe7bc8a976e6b2124",
+      "size_bytes": 1033,
+      "file_type": "text/x-kotlin",
+      "submission_order": 1
+    }
+  ]
+}
