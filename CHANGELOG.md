@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased] - Maintenance architecture rework
+## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 
 No prompt content changed in this section - all 32 root `*.en.md`/`*.sr.md` files remain byte-identical to
 the tagged `v2.0.0` release (verified by `scripts/compose.py --check` and `scripts/check_section_loss.py`
