@@ -41,10 +41,22 @@ against `archive/v2.0.0/SECTION_INVENTORY.json`). What changed is how the librar
   `stacks/go-audit-overlay.md`, `stacks/rust-audit-overlay.md`, and `scripts/migrate_all_stacks.py`.
 - Dead link in `baselines/sources.json` (`crates.io/crates/tauri` → 404) replaced with the GitHub releases page.
 
+### Added (continued)
+
+- `evals/providers/openai.py` and `evals/providers/anthropic.py`: live provider adapters implementing
+  `BaseProvider`, using each vendor's current structured-output mechanism (OpenAI: `response_format`
+  json_schema; Anthropic: forced strict tool use) so `structured_findings` is schema-valid by
+  construction rather than parsed best-effort from free text. Both lazy-import their SDK so the rest of
+  the tooling (including CI) never needs `openai`/`anthropic` installed. Neither has been exercised
+  against a live API key by this repository's own tooling - verify before relying on either for a
+  release-gating eval run.
+
 ### Known limitations
 
 - Public eval fixtures (17 total) are still synthetic scaffolding for exercising the harness, not real
-  vulnerable-code samples; the `mock` provider is the only wired provider (no live LLM adapters yet).
+  vulnerable-code samples.
+- The `openai` and `anthropic` provider adapters are implemented but untested against live APIs (no
+  credentials in the authoring environment) - validate against a real key before trusting their output.
 - Only 2 of 16 stacks have a proven shared module; the rest were independently authored and genuinely differ
   in structure and evidence-model semantics, so most content remains intentionally stack-local.
 

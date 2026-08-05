@@ -94,6 +94,13 @@ and `run_evals.py` (the mock-provider regression suite). `check_source_links.py`
 against third-party sites and runs separately on a daily schedule (`.github/workflows/source-links.yml`),
 not on every push.
 
+The regression suite above runs against `evals/providers/mock.py` (deterministic, zero-cost, no
+credentials) — it verifies the harness plumbing, not real audit quality. `evals/providers/openai.py`
+and `evals/providers/anthropic.py` call the real APIs for that (`--provider openai` / `--provider
+anthropic`, each needs its SDK `pip install openai` / `pip install anthropic` plus `OPENAI_API_KEY` /
+`ANTHROPIC_API_KEY` — neither is in `requirements.txt` since the rest of the tooling doesn't need them,
+and neither has been run against a live key by the tooling in this repository).
+
 Structural parity does not prove perfect semantic translation. Human or model-assisted bilingual review is still required for meaning-sensitive changes.
 
 ## Repository Layout

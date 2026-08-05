@@ -29,6 +29,12 @@ def main() -> int:
 
     if args.provider == "mock":
         provider = MockProvider()
+    elif args.provider == "openai":
+        from evals.providers.openai import OpenAIProvider
+        provider = OpenAIProvider()
+    elif args.provider == "anthropic":
+        from evals.providers.anthropic import AnthropicProvider
+        provider = AnthropicProvider()
     else:
         print(f"Error: Provider '{args.provider}' not registered.")
         return 1

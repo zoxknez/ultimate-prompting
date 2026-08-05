@@ -42,7 +42,7 @@
     "scripts/generate_fixture_packages.py": "sha256:f849477b76188cb24248431b98a0c231f8b6f0cece6f20bef326fe40df8cd9ff",
     "scripts/generate_section_inventory.py": "sha256:a6ac59e0e37b06adc77fc5ee6692ecd7d4f5c2614d2985c227447a5523261459",
     "scripts/migrate_orphaned_baselines.py": "sha256:c1f38300d56ce6881824c89857adfb67ad9e0789ab78c4148335896ceb4e0d85",
-    "scripts/run_evals.py": "sha256:fdded1798fa98767a966d91a70ae4b42e1c02c90b6f3c809d93ebbc7607a87a0",
+    "scripts/run_evals.py": "sha256:a7cc2a448ce500f45e5c0f9ffbd4b03b8f4f0c667209de640f1b8c5a6e5d64e3",
     "scripts/validate_release.py": "sha256:68ed7f96bdf95b5916a73b944aee03ad948bb9580efa5c3608fd70c850a25081",
     "stacks/ai-rag-llm-agent/sections/en/000-preamble.md": "sha256:96fce2ab2bc1404072f142a083ea8e48dd25f4cd0b593083b5f64e2900cc73b5",
     "stacks/ai-rag-llm-agent/sections/en/010-0-how-to-use-this-prompt.md": "sha256:30b4344bce7b8937f5de141beaad0673a39dead3ad521ec479e84f5f60c1fa62",
