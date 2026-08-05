@@ -5,6 +5,10 @@
     "stacks/ai-rag-llm-agent/sections/sr/000-preamble.md",
     "stacks/ai-rag-llm-agent/sections/sr/010-0-kako-koristiti-ovaj-prompt.md",
     "stacks/ai-rag-llm-agent/sections/sr/020-1-obavezujuci-operativni-ugovor.md",
+    {
+      "module": "contracts/evidence/finding-status-vocabulary-standard.sr.md"
+    },
+    "stacks/ai-rag-llm-agent/sections/sr/021-1-obavezujuci-operativni-ugovor-continued.md",
     "stacks/ai-rag-llm-agent/sections/sr/030-2-uloga-i-misija.md",
     "stacks/ai-rag-llm-agent/sections/sr/040-3-obavezni-rezultati.md",
     "stacks/ai-rag-llm-agent/sections/sr/050-4-dokazi-nalazi-i-severity.md",

@@ -5,6 +5,10 @@
     "stacks/android-master/sections/en/000-preamble.md",
     "stacks/android-master/sections/en/010-0-how-to-use-this-prompt.md",
     "stacks/android-master/sections/en/020-1-non-negotiable-operating-contract.md",
+    {
+      "module": "contracts/evidence/finding-status-vocabulary-standard.en.md"
+    },
+    "stacks/android-master/sections/en/021-1-non-negotiable-operating-contract-continued.md",
     "stacks/android-master/sections/en/030-2-current-research-baseline-re-check-before-every-audit.md",
     "stacks/android-master/sections/en/040-3-role-and-mission.md",
     "stacks/android-master/sections/en/050-4-mandatory-deliverables.md",

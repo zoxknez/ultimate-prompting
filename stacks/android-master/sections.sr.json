@@ -5,6 +5,10 @@
     "stacks/android-master/sections/sr/000-preamble.md",
     "stacks/android-master/sections/sr/010-0-kako-koristiti-ovaj-prompt.md",
     "stacks/android-master/sections/sr/020-1-obavezujuci-operativni-ugovor.md",
+    {
+      "module": "contracts/evidence/finding-status-vocabulary-standard.sr.md"
+    },
+    "stacks/android-master/sections/sr/021-1-obavezujuci-operativni-ugovor-continued.md",
     "stacks/android-master/sections/sr/030-2-aktuelni-istrazivacki-baseline-ponovo-proveriti-pre-svakog.md",
     "stacks/android-master/sections/sr/040-3-uloga-i-misija.md",
     "stacks/android-master/sections/sr/050-4-obavezni-rezultati.md",

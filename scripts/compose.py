@@ -46,8 +46,8 @@ def generate_composition_lock() -> dict:
     }
     EXCLUDED_PREFIXES = ("archive/", "evals/results/", ".git/")
 
-    # Collect all source component files (stacks, baselines, scripts)
-    SOURCE_PREFIXES = ("stacks/", "baselines/", "scripts/")
+    # Collect all source component files (stacks, contracts, baselines, scripts)
+    SOURCE_PREFIXES = ("stacks/", "contracts/", "baselines/", "scripts/")
 
     for p in sorted(ROOT.rglob("*")):
         if not p.is_file():
@@ -80,7 +80,10 @@ def compose_stack_local_sections(stack_config: dict, locale: str) -> str:
     manifest_rel = stack_config["sections_manifest"][locale]
     manifest_path = ROOT / manifest_rel
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    for section_rel in manifest["sections"]:
+    for entry in manifest["sections"]:
+        # An entry is either a plain relative path (stack-local section) or
+        # {"module": "<path>"} referencing a shared, deduplicated contract module.
+        section_rel = entry["module"] if isinstance(entry, dict) else entry
         section_path = ROOT / section_rel
         parts.append(section_path.read_text(encoding="utf-8"))
 

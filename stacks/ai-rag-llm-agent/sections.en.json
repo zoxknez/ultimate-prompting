@@ -5,6 +5,10 @@
     "stacks/ai-rag-llm-agent/sections/en/000-preamble.md",
     "stacks/ai-rag-llm-agent/sections/en/010-0-how-to-use-this-prompt.md",
     "stacks/ai-rag-llm-agent/sections/en/020-1-non-negotiable-operating-contract.md",
+    {
+      "module": "contracts/evidence/finding-status-vocabulary-standard.en.md"
+    },
+    "stacks/ai-rag-llm-agent/sections/en/021-1-non-negotiable-operating-contract-continued.md",
     "stacks/ai-rag-llm-agent/sections/en/030-2-role-and-mission.md",
     "stacks/ai-rag-llm-agent/sections/en/040-3-mandatory-deliverables.md",
     "stacks/ai-rag-llm-agent/sections/en/050-4-evidence-findings-and-severity.md",

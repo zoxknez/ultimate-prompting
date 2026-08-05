@@ -43,7 +43,8 @@ def main() -> int:
 
             manifest_path = ROOT / "stacks" / stack_id / f"sections.{locale}.json"
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            reconstructed = "".join(Path(ROOT / p).read_text(encoding="utf-8") for p in manifest["sections"])
+            rel_paths = [entry["module"] if isinstance(entry, dict) else entry for entry in manifest["sections"]]
+            reconstructed = "".join(Path(ROOT / p).read_text(encoding="utf-8") for p in rel_paths)
 
             original_path = ROOT / fname
             original = original_path.read_text(encoding="utf-8")
