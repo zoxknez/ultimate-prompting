@@ -11,6 +11,24 @@
   Rails), `JAVA-CORS-001` (`allowedOriginPatterns("*")` combined with `allowCredentials(true)`, Spring
   Boot). 2 are P0 (SQLi, IDOR), 2 are P1 (mass assignment, CORS) - the first fixtures in the public suite
   with a severity other than P0. Public fixture count: 18 -> 22.
+- 4 more real fixtures, each independently re-verified (schema validation plus an independent re-hash of
+  the manifest against the actual file on disk, not just trusted at authoring time) before committing:
+  `GO-CMDINJECT-001` (P0 - caller-supplied host interpolated into a `sh -c` string, go-rust-backend),
+  `SQL-DYNIDENT-001` (P0 - table name and row limit string-formatted into a raw query with no
+  allowlist/parameterization, sql-database), `DOCKER-LAYERLEAK-001` (P1 - `COPY . .` with no
+  `.dockerignore` bakes `.env` and an SSH deploy key into image layers, devops-docker-kubernetes; named
+  to avoid this repository's own `*secret*` .gitignore rule, which correctly caught and blocked the
+  original `DOCKER-SECRETLEAK-001` directory name even though the fixture contains no real credential),
+  `ANDROID-HARDCODEDKEY-001` (P0 - a live payments-provider secret key compiled as a plain string
+  constant into client-distributed app code, android-master; the fixture's placeholder value originally
+  used a realistic `sk_live_...`-shaped string, which GitHub's push protection correctly flagged as a
+  likely real Stripe key before it ever reached the remote - replaced with an unambiguously-fake string
+  that keeps the same finding without matching any real provider's key format). Public fixture count:
+  22 -> 26.
+  Severity distribution so far: 5 P0 across the new fixtures (7 counting NEXT-INJECTION-001 and
+  NEXT-AUTH-001's real-vulnerability finding), 2 P1 - still well short of the 8 P0 / 16 P1 target
+  described in early planning, which needs real content across the remaining stacks (mobile, desktop,
+  AI/RAG, .NET, WordPress) to close.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

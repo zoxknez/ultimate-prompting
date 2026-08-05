@@ -1,0 +1,22 @@
+{
+  "fixture_id": "ANDROID-HARDCODEDKEY-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved hardcoded-secret golden finding for android-master: a live payments-provider secret key is compiled as a plain string constant into client-distributed app code, trivially extractable by decompiling the APK."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "ANDROID-HARDCODEDKEY-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["app/src/main/java/com/example/app/PaymentsClient.kt"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

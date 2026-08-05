@@ -1,0 +1,12 @@
+{
+  "fixture_id": "DOCKER-LAYERLEAK-001",
+  "files": [
+    {
+      "path": "Dockerfile",
+      "sha256": "8faafbf73b9294b5334070ef4de58fa191a31ab1c9bf9ecc8192568338f77e79",
+      "size_bytes": 664,
+      "file_type": "text/plain",
+      "submission_order": 1
+    }
+  ]
+}

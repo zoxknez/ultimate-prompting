@@ -1,0 +1,12 @@
+{
+  "fixture_id": "ANDROID-HARDCODEDKEY-001",
+  "files": [
+    {
+      "path": "app/src/main/java/com/example/app/PaymentsClient.kt",
+      "sha256": "1b0a0b7464479f2013f844c805512e7868699fa89d7708725c43d665bd08b87f",
+      "size_bytes": 643,
+      "file_type": "text/x-kotlin",
+      "submission_order": 1
+    }
+  ]
+}

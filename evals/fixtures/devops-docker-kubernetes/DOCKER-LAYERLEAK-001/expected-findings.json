@@ -1,0 +1,22 @@
+{
+  "fixture_id": "DOCKER-LAYERLEAK-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-05",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved secret-in-image-layer golden finding for devops-docker-kubernetes: COPY . . with no .dockerignore bakes .env and an SSH deploy key into the image, recoverable from layers even if a later step deletes them."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "DOCKER-LAYERLEAK-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["Dockerfile"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

@@ -1,0 +1,12 @@
+{
+  "fixture_id": "GO-CMDINJECT-001",
+  "files": [
+    {
+      "path": "internal/diagnostics/ping.go",
+      "sha256": "eb70b06297161d4e81d4622c496371de4f2a1a070f3f87abf56b590d7e4d431d",
+      "size_bytes": 550,
+      "file_type": "text/x-go",
+      "submission_order": 1
+    }
+  ]
+}

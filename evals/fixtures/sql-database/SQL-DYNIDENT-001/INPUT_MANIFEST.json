@@ -1,0 +1,12 @@
+{
+  "fixture_id": "SQL-DYNIDENT-001",
+  "files": [
+    {
+      "path": "internal/admin/table_export.py",
+      "sha256": "2dadd1b5e0e0e8b555adaf78a8f4917346c71a9287bb6b187764a8c0c6d6bcea",
+      "size_bytes": 664,
+      "file_type": "text/x-python",
+      "submission_order": 1
+    }
+  ]
+}
