@@ -1,0 +1,12 @@
+{
+  "fixture_id": "SQL-PLAINTEXTPAN-001",
+  "files": [
+    {
+      "path": "migrations/003_create_payment_methods.sql",
+      "sha256": "3afa686db041f1f1fc6e470f3249e92b59ed1e6211e6d462c767788c5a4e203f",
+      "size_bytes": 832,
+      "file_type": "text/x-sql",
+      "submission_order": 1
+    }
+  ]
+}

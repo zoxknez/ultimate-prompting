@@ -1,0 +1,22 @@
+{
+  "fixture_id": "RUBY-UNSAFEYAML-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved unsafe-deserialization golden finding for ruby-rails: YAML.load (not YAML.safe_load) is called on user-supplied import content, allowing instantiation of arbitrary Ruby objects and a well-documented path to remote code execution."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "RUBY-UNSAFEYAML-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["app/services/import_service.rb"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

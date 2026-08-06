@@ -1,0 +1,22 @@
+{
+  "fixture_id": "NODE-PROTOPOLLUTION-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved prototype-pollution golden finding for node-express-api: deepMerge recurses into the request body with no check for __proto__/constructor/prototype keys, letting a crafted body pollute Object.prototype for the whole process."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "NODE-PROTOPOLLUTION-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["routes/settings.js"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

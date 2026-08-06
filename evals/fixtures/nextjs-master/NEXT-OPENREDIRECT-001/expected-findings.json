@@ -1,0 +1,22 @@
+{
+  "fixture_id": "NEXT-OPENREDIRECT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved open-redirect golden finding for nextjs-master: callbackUrl is taken from the query string and used as the redirect target with no check that it points back at this app's own origin."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "NEXT-OPENREDIRECT-001-FINDING-01",
+      "severity": "P1",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 1,
+      "allowed_paths": ["app/api/auth/callback.ts"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

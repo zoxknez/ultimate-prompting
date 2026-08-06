@@ -1,0 +1,22 @@
+{
+  "fixture_id": "SQL-PLAINTEXTPAN-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved plaintext-payment-data golden finding for sql-database: card_number and cvv are stored in plain unencrypted columns, exposing the full PAN and CVV to anyone with table read access and failing PCI-DSS storage requirements outright."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "SQL-PLAINTEXTPAN-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["migrations/003_create_payment_methods.sql"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

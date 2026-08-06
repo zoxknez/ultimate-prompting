@@ -1,0 +1,12 @@
+{
+  "fixture_id": "PHP-UNRESTRICTEDUPLOAD-001",
+  "files": [
+    {
+      "path": "app/Http/Controllers/AvatarController.php",
+      "sha256": "19933535511d9c88217f85be5f5bb2f97310124f175db2d51566cbf54cb5e5b7",
+      "size_bytes": 818,
+      "file_type": "text/php",
+      "submission_order": 1
+    }
+  ]
+}

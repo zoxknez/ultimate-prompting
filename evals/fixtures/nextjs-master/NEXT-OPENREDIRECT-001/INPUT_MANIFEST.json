@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NEXT-OPENREDIRECT-001",
+  "files": [
+    {
+      "path": "app/api/auth/callback.ts",
+      "sha256": "fd8221a97f5908af58a6f4e2753ca7018f7744c9569760d43a0f6154f7ef1d7c",
+      "size_bytes": 706,
+      "file_type": "text/typescript",
+      "submission_order": 1
+    }
+  ]
+}

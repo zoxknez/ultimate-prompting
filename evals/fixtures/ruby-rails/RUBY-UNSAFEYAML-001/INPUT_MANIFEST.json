@@ -1,0 +1,12 @@
+{
+  "fixture_id": "RUBY-UNSAFEYAML-001",
+  "files": [
+    {
+      "path": "app/services/import_service.rb",
+      "sha256": "d1ea7fab04327769837c51509248c2efb8464296915cb72827df8d2e4af65119",
+      "size_bytes": 551,
+      "file_type": "text/x-ruby",
+      "submission_order": 1
+    }
+  ]
+}

@@ -126,6 +126,24 @@
   resolution enabled for uploaded XML). All 4 independently re-verified (schema validation, re-computed
   manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture count
   unchanged at 42; real fixture count: 32 -> 36; remaining tautological placeholders: 9 -> 5.
+- Retired the final 5 placeholders: `NEXTJS-MASTER-FIX-001`, `NODE-EXPRESS-API-FIX-001`,
+  `PHP-LARAVEL-SYMFONY-FIX-001`, `RUBY-RAILS-FIX-001`, `SQL-DATABASE-FIX-001`. **Every one of the original
+  17 generated placeholder fixtures has now been replaced with a real one** - the public suite no longer
+  contains any fixture whose `finding_id` was engineered to match `MockProvider`'s hardcoded output.
+  Replacements: `NEXT-OPENREDIRECT-001` (P1 - `callbackUrl` from the query string is used as a redirect
+  target with no same-origin check, nextjs-master), `NODE-PROTOPOLLUTION-001` (P0 - a recursive settings
+  merge has no `__proto__`/`constructor`/`prototype` key check, allowing prototype pollution of the whole
+  process, node-express-api), `PHP-UNRESTRICTEDUPLOAD-001` (P0 - an avatar upload is stored under its
+  original filename with no extension allowlist directly in the public web root, allowing a PHP webshell
+  upload, php-laravel-symfony), `RUBY-UNSAFEYAML-001` (P0 - `YAML.load` instead of `YAML.safe_load` on
+  user-supplied import content, a well-documented Ruby RCE vector, ruby-rails), `SQL-PLAINTEXTPAN-001`
+  (P0 - a payment_methods table stores the full card number and CVV in plain unencrypted columns,
+  failing PCI-DSS storage requirements outright, sql-database). All 5 independently re-verified (schema
+  validation, re-computed manifest hashes, secret-pattern scan, gitignore check) before committing.
+  Public fixture count unchanged at 42. **Real (non-generated) fixture count: 42/42; tautological
+  placeholders: 0.** (Verified by direct recount - every fixture directory now has a `files/` subdirectory
+  with actual source, not derived from the incremental per-commit deltas above, which had drifted by one
+  somewhere across this series.)
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

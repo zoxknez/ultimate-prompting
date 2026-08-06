@@ -1,0 +1,12 @@
+{
+  "fixture_id": "NODE-PROTOPOLLUTION-001",
+  "files": [
+    {
+      "path": "routes/settings.js",
+      "sha256": "3efb6752b0eb226933c16f38e86fe553bdacf867c318064bc694c9587489e2dc",
+      "size_bytes": 1286,
+      "file_type": "text/javascript",
+      "submission_order": 1
+    }
+  ]
+}

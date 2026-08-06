@@ -1,0 +1,22 @@
+{
+  "fixture_id": "PHP-UNRESTRICTEDUPLOAD-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved unrestricted-file-upload golden finding for php-laravel-symfony: the uploaded file is stored under its original filename with no extension allowlist or MIME check, directly inside the public web root, allowing a PHP webshell to be uploaded and executed."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "PHP-UNRESTRICTEDUPLOAD-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["app/Http/Controllers/AvatarController.php"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

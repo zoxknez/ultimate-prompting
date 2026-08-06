@@ -1,12 +1,12 @@
 {
-  "fixture_id": "NEXTJS-MASTER-FIX-001",
-  "stack_id": "nextjs-master",
+  "fixture_id": "SQL-PLAINTEXTPAN-001",
+  "stack_id": "sql-database",
   "synthetic": true,
   "license": "MIT",
   "contains_real_credentials": false,
   "contains_production_data": false,
   "source_provenance": "authored-for-evaluation",
-  "allowed_execution": true,
+  "allowed_execution": false,
   "safe_fix_mode": "not-applicable",
   "safe_fix_required": false
 }
