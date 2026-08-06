@@ -1,0 +1,22 @@
+{
+  "fixture_id": "JAVA-XXE-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved XXE golden finding for java-spring-boot: DocumentBuilderFactory is used with default settings, leaving external entity resolution and external DTD loading enabled for uploaded XML."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "JAVA-XXE-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["src/main/java/com/example/parser/InvoiceXmlParser.java"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

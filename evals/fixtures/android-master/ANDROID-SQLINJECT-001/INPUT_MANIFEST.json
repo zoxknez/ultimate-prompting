@@ -1,0 +1,12 @@
+{
+  "fixture_id": "ANDROID-SQLINJECT-001",
+  "files": [
+    {
+      "path": "app/src/main/java/com/example/app/NoteRepository.kt",
+      "sha256": "88ef6f3c3bbb413215d95362ed3c84519470220dbfe54e82349c95746b400286",
+      "size_bytes": 1104,
+      "file_type": "text/x-kotlin",
+      "submission_order": 1
+    }
+  ]
+}

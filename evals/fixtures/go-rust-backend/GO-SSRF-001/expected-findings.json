@@ -1,0 +1,22 @@
+{
+  "fixture_id": "GO-SSRF-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved SSRF golden finding for go-rust-backend: FetchPreview fetches a caller-supplied URL server-side with no validation against internal IP ranges or the cloud metadata endpoint, turning the service into a proxy into the internal network."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "GO-SSRF-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["internal/webhooks/fetch.go"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

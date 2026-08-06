@@ -1,0 +1,12 @@
+{
+  "fixture_id": "K8S-DOCKERSOCKMOUNT-001",
+  "files": [
+    {
+      "path": "ci-runner-deployment.yaml",
+      "sha256": "97577a6887fa2c5eaf8d7f92db808f8559fd9662bd997a6e41f12a1f71d59a49",
+      "size_bytes": 870,
+      "file_type": "text/yaml",
+      "submission_order": 1
+    }
+  ]
+}

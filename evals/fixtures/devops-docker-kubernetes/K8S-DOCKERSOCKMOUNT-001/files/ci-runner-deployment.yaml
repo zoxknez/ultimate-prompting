@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci-runner
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: ci-runner
+          image: registry.example.com/ci-runner:2026.08.05
+          volumeMounts:
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+      # Vulnerable: mounting the host's Docker socket into a pod gives that
+      # container full control over the Docker daemon on the node - it can
+      # start a new privileged container with the host filesystem mounted,
+      # which is a well-known, direct path to full node compromise. Any code
+      # this CI runner executes (an untrusted pipeline step, a compromised
+      # build dependency) inherits that same access.
+      volumes:
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
+            type: Socket

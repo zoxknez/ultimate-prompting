@@ -1,12 +1,12 @@
 {
-  "fixture_id": "JAVA-SPRING-BOOT-FIX-001",
-  "stack_id": "java-spring-boot",
+  "fixture_id": "K8S-DOCKERSOCKMOUNT-001",
+  "stack_id": "devops-docker-kubernetes",
   "synthetic": true,
   "license": "MIT",
   "contains_real_credentials": false,
   "contains_production_data": false,
   "source_provenance": "authored-for-evaluation",
-  "allowed_execution": true,
+  "allowed_execution": false,
   "safe_fix_mode": "not-applicable",
   "safe_fix_required": false
 }

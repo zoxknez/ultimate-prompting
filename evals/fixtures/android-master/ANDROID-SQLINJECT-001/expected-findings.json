@@ -1,0 +1,22 @@
+{
+  "fixture_id": "ANDROID-SQLINJECT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved local-SQL-injection golden finding for android-master: the search term is concatenated directly into the LIKE clause instead of bound as a parameter, even though owner_id in the same query is correctly parameterized - a realistic partial-fix pattern."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "ANDROID-SQLINJECT-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["app/src/main/java/com/example/app/NoteRepository.kt"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}

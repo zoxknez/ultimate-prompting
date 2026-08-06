@@ -1,0 +1,12 @@
+{
+  "fixture_id": "JAVA-XXE-001",
+  "files": [
+    {
+      "path": "src/main/java/com/example/parser/InvoiceXmlParser.java",
+      "sha256": "77a724d65b446386acd7263183d1c5bf8e9eae605b6728c976bf01b3ff22b8c3",
+      "size_bytes": 979,
+      "file_type": "text/x-java",
+      "submission_order": 1
+    }
+  ]
+}

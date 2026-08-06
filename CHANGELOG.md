@@ -114,6 +114,18 @@
   re-computed manifest hashes for every file including NEXT-AUTH-001's now-real ones, secret-pattern
   scan, gitignore check) before committing. Public fixture count unchanged at 42; real fixture count:
   28 -> 32 (28 + NEXT-AUTH-001 completed in place + 3 new); remaining tautological placeholders: 13 -> 9.
+- Retired 4 more placeholders: `ANDROID-MASTER-FIX-001`, `DEVOPS-DOCKER-KUBERNETES-FIX-001`,
+  `GO-RUST-BACKEND-FIX-001`, `JAVA-SPRING-BOOT-FIX-001`. Replaced with real fixtures covering
+  vulnerability classes not yet represented anywhere in the suite: `ANDROID-SQLINJECT-001` (P0 - a local
+  SQLite search query concatenates the search term into the `LIKE` clause while `owner_id` in the same
+  query is correctly parameterized, a realistic partial-fix pattern), `K8S-DOCKERSOCKMOUNT-001` (P0 - the
+  host's `/var/run/docker.sock` is mounted into a CI-runner pod, giving any code it runs full control
+  over the node's Docker daemon), `GO-SSRF-001` (P0 - a link-preview fetcher requests a caller-supplied
+  URL server-side with no validation against internal IP ranges or the cloud metadata endpoint), and
+  `JAVA-XXE-001` (P0 - `DocumentBuilderFactory` is used with default settings, leaving external entity
+  resolution enabled for uploaded XML). All 4 independently re-verified (schema validation, re-computed
+  manifest hashes, secret-pattern scan, gitignore check) before committing. Public fixture count
+  unchanged at 42; real fixture count: 32 -> 36; remaining tautological placeholders: 9 -> 5.
 
 ## [2.1.0] - 2026-08-05 - Maintenance architecture rework
 

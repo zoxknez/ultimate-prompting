@@ -1,0 +1,12 @@
+{
+  "fixture_id": "GO-SSRF-001",
+  "files": [
+    {
+      "path": "internal/webhooks/fetch.go",
+      "sha256": "60f83500b6ef71917e666e84884ee03631fd27105bed2158749d6f44af4f6e68",
+      "size_bytes": 782,
+      "file_type": "text/x-go",
+      "submission_order": 1
+    }
+  ]
+}

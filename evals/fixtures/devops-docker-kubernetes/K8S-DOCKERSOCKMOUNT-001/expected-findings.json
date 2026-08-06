@@ -1,0 +1,22 @@
+{
+  "fixture_id": "K8S-DOCKERSOCKMOUNT-001",
+  "status": "approved",
+  "dual_approval": {
+    "author": "prompt-engineer-lead",
+    "reviewer": "security-architect-reviewer",
+    "approved_at": "2026-08-06",
+    "commit_revision": "v2.1.0",
+    "comments": "Approved docker-socket-mount golden finding for devops-docker-kubernetes: the host's /var/run/docker.sock is mounted into the pod, giving any code this container runs full control over the node's Docker daemon - a direct path to node compromise."
+  },
+  "expected_findings": [
+    {
+      "finding_id": "K8S-DOCKERSOCKMOUNT-001-FINDING-01",
+      "severity": "P0",
+      "min_evidence_level": "E1",
+      "severity_tolerance": 0,
+      "allowed_paths": ["ci-runner-deployment.yaml"]
+    }
+  ],
+  "forbidden_findings": [],
+  "expected_clean_areas": []
+}
